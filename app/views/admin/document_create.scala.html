@@ -1,0 +1,41 @@
+@(documentForm: Form[Document])(implicit flash: play.api.mvc.Flash)
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("StealStation :: Where everything is a Steal!") {
+  <div class="span9">
+
+    <div class="hero-unit">
+
+      @flash.get("success").map { message =>
+        <div class="text-success">@message</div>
+      }
+	  
+      <h3>Enter a Purchase Order</h3>
+	  
+      @form(action = routes.Accounting.submitDocument) {
+		
+        @inputText(
+    	    documentForm("description"),
+    	    '_label -> "Description",
+    	    '_error -> documentForm.globalError,
+    		  '_showConstraints -> false
+    		//,'onBlur->"isEmailExist()"
+        )
+    		
+    	@inputText(
+          documentForm("amountDue"),
+          '_label -> "Amount Due",
+          '_error -> documentForm.globalError,
+    	    '_showConstraints -> false
+        )
+        
+        <input type="submit" id="submit" value="Create &raquo;" class="btn btn-primary" />
+      
+      }
+      
+    </div><!-- /hero-unit -->
+      
+  </div>  
+}

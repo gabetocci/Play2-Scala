@@ -1,0 +1,24 @@
+@(message: String)
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("StealStation :: Find a Steal of a Deal!") {
+
+  <script src="@routes.Assets.at("js/views/index.js")"></script>
+
+    <!-- responsive row -->
+    <div class="row-fluid">
+
+        <div class="span9">
+
+            <div class="hero-unit">
+
+                <h3>@message</h3>
+
+            </div><!-- /hero-unit -->
+
+        </div>
+
+    </div><!-- /.row-fluid -->
+}

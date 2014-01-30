@@ -1,0 +1,85 @@
+/************************************************************************
+ * Tess Core
+ ************************************************************************/
+
+.float-left {
+  float: left;
+}
+
+.test_button
+{
+  background: rgb(66, 184, 221);
+}
+
+.general-button{
+  background-color:#ca3c3c;
+  background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ca3c3c),color-stop(100%,#ba3333));
+  background-image:-webkit-linear-gradient(top,#ca3c3c,#ba3333);
+  background-image:-moz-linear-gradient(top,#ca3c3c,#ba3333);
+  background-image:-ms-linear-gradient(top,#ca3c3c,#ba3333);
+  background-image:-o-linear-gradient(top,#ca3c3c,#ba3333);
+  background-image:linear-gradient(top,#ca3c3c,#ba3333);
+  border:1px solid #922828; /** #63a62f;  */
+  box-shadow:0 2px 3px #666666;
+  -moz-box-shadow:0 2px 3px #666666;
+  -webkit-box-shadow:0 2px 3px #666666;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  border-radius:8px;color:#fff;
+  font-family:Verdana,Geneva,sans-serif;
+  font-size:14px;
+  text-align:center;
+}
+.general-button:hover{
+  background-color:#ba3333;
+  background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ba3333),color-stop(100%,#ca3c3c));
+  background-image:-webkit-linear-gradient(top,#ba3333,#ca3c3c);
+  background-image:-moz-linear-gradient(top,#ba3333,#ca3c3c);
+  background-image:-ms-linear-gradient(top,#ba3333,#ca3c3c);
+  background-image:-o-linear-gradient(top,#ba3333,#ca3c3c);
+  background-image:linear-gradient(top,#ba3333,#ca3c3c);
+  box-shadow:0 2px 3px #666666;
+  -moz-box-shadow:0 2px 3px #666666;
+  -webkit-box-shadow:0 2px 3px #666666;
+  -webkit-border-radius:8px;
+  -moz-border-radius:8px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/** dataEntry **/
+#frmDataEntry input {width:90%;}
+#frmDataEntry select {width:95%;}
+.error-input {
+  border-color: rgba(256, 0, 0, 0.8) !important;
+  box-shadow: 0 1px 1px rgba(256, 0, 0, 0.075)
+  inset, 0 0 8px rgba(256, 0, 0, 0.6) !important;
+  outline: 0 none !important;
+}
+
+/** dataTable popup **/
+div.pop-up {
+  display: none;
+  position: absolute;
+  width: 280px;
+  padding: 10px;
+  background: #eeeeee;
+  color: #000000;
+  border: 1px solid #1a1a1a;
+  font-size: 90%;
+}
+
+
+/** unused **/
+#dialog-box-background{
+  display:none;
+  _position:absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  background:#000000;
+  border:1px solid #cecece;
+  position:fixed;
+  z-index:99999999;
+}

@@ -1,0 +1,89 @@
+@(tables: Seq[Table])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("StealStation :: Where everything is a Steal!") {
+
+  <script src="@routes.Assets.at("js/views/recordtypes.js")"></script>
+  
+  <div class="span10">
+  
+	  <h3>Record Type Codes</h3>
+
+  	<hr />
+
+    <table id="dataEntry">
+    <thead>
+      <tr>
+				<th>Code</th>
+				<th>Name</th>
+				<th>Table</th>
+				<th>Date Last Modified</th>
+			</tr>
+    </thead>
+    <tbody>
+	    <tr>
+	      <td>
+	      	<input type="hidden" id="hidId">
+	      	<input type="text" id="txtTypeCode">
+	      </td>
+	      <td><input type="text" id="txtName" maxlength="45"></td>
+	      <td><select id="drpTable">
+	        @tables.map {
+			      case (t) => {
+							<option value="@t.name">@t.name</option>
+			      }
+			    }
+	      </select></td>
+	      <td><input type="text" id="txtDateModified" readonly="true"></td>
+	    </tr>
+	    <tr>
+	      <th>Code Description</th>
+	    </tr>	    
+	    <tr>
+	      <td colspan="4">
+	        <input type="text" id="txtDescription" maxlength="1000">
+	      </td>
+	    </tr>
+			<tr>
+				<th>
+				  <input type="checkbox" id="chkActive" value="active" checked="true">&nbsp;&nbsp;Active
+				  <br /><br />
+				</th>
+				<th colspan="3"></th>
+      </tr>
+	    <tr>
+	      <td colspan="4">
+          <button type="button" id="btnInsert" class="btn">Create &raquo; Code</button>
+	      </td>
+	    </tr>
+    </tbody>
+    </table>    
+
+		<hr />
+
+		<table cellpadding="0" cellspacing="0" border="0" class="display" id="dataTable" width="100%">
+		<thead>
+		  <tr>
+				<th>Code</th>
+				<th>Name</th>
+				<th>Table</th>
+				<th>Date Last Modified</th>
+				<th>Active</th>
+			</tr>
+		</thead>
+    <tbody id="dataTableBody"></tbody>		
+    <tfoot>
+			<tr>
+				<th>Code</th>
+				<th>Name</th>
+				<th>Table</th>
+				<th>Date Last Modified</th>
+				<th>Active</th>
+			</tr>
+		</tfoot>
+	  </table>
+
+  </div>
+}

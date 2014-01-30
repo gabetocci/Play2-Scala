@@ -1,0 +1,88 @@
+@(recordTypes: Seq[RecordType])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("StealStation :: Where everything is a Steal!") {
+
+  <script ="text/javascript" src="@routes.Assets.at("js/views/accounts.js")"></script>
+  
+  <div class="span8">
+
+    <form id="frmDataEntry">
+      <h4>Create/Edit Account</h4>
+      <hr />
+
+      <div class="row-fluid">
+        <div class="span6">
+          <label for="txtId">Account Number</label>
+          <input type="text" id="txtId" readonly="true">
+        </div>
+        <div class="span6">
+          <label for="txtName">Account Name</label>
+          <input type="text" id="txtName" maxlength="45"></input>
+        </div>
+      </div>
+      
+      <div class="row-fluid">
+        <div class="span6">
+          <label for="txtDateModified">Last Modified</label>
+          <input type="text" id="txtDateModified" readonly="true">
+        </div>
+        <div class="span6">
+          <label for="drpRType">Record Type</label>
+          <select id="drpRType">          
+          @recordTypes.map {
+            case (r) => {
+              <option value="@r.typeCode">@r.name</option>
+            }
+          }
+          </select>
+        </div>
+      </div>
+  
+      <div class="row-fluid">
+        <div class="span12">
+          <label for="txtDescription">Account Description</label>
+          <textarea id="txtDescription"></textarea>
+        </div>
+      </div>
+      
+      <div class="row-fluid">
+        <div class="span12">
+          <button type="button" id="btnInsert" class="btn">Create &raquo; Account</button>
+        </div>
+      </div>
+            
+    </form><!-- /#dataEntryForm -->
+
+      <div class="row-fluid">        
+        <div class="span12">
+        
+          <hr />
+
+          <table cellpadding="0" cellspacing="0" border="0" class="display" id="dataTable">
+          <thead>
+            <tr>
+              <th>Account Number</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Date Last Modified</th>
+            </tr>
+          </thead>
+          <tbody id="dataTableBody"></tbody>
+          <tfoot>
+            <tr>
+              <th>Account Number</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Date Last Modified</th>
+            </tr>
+          </tfoot>
+          </table>
+          
+        </div>
+      </div>
+    
+  </div>    
+}

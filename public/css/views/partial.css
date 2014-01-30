@@ -1,0 +1,110 @@
+
+/************************************************************************
+ * header
+ ************************************************************************/
+.nav-list > .active > a,
+.nav-list > .active > a:focus {
+  color: rgb(0, 0, 0);
+  padding: 17px 15px;
+}
+.navbar-inverse .nav-collapse .nav > li > a,
+.navbar-inverse .nav-collapse .dropdown-menu a {
+  color: rgb(255, 255, 255);
+}
+.nav-list > .active > a:hover,
+.navbar-inverse .nav > li > a:hover {
+  color: rgb(255, 0, 0);
+}
+.navbar .nav {
+  margin: 8px 10px 0 0;
+  font-size: 12px;
+}
+#nav-logo {
+  width: 200px;
+  height: 35px;
+}
+
+/** login box **/
+#login-label {
+  margin-top: 30px;
+  color: rgb(150, 150, 150);
+}
+#login-label > span {
+  font-size: 12px;
+}
+a#login-link:hover {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+#login-link {
+  color: rgb(255, 255, 255);
+}
+#login-box{
+  display:none;
+  width:420px;
+  border:solid 1px #000;
+  background-color:#FFF;
+  box-shadow:0 0 20px #000;
+  -moz-box-shadow:0 0 20px #000;
+  -webkit-box-shadow:0 0 20px #000;
+  -webkit-border-radius:15px;
+  -moz-border-radius:15px;
+  border-radius:15px;
+  padding:10px;
+  padding-left:20px;
+  padding-right:20px;
+  font-family:Verdana,Geneva,sans-serif;
+  font-size:11px;
+  top:20%;
+  right:30%;
+  position:fixed;
+  z-index:9999999999;
+}
+
+/** nav menu **/
+#nav-menu {
+  width: 800px;
+  overflow: hidden;
+}
+  #department-menu {
+    float:left;
+  }
+  #search-bar {
+    overflow: hidden;
+    left: 250px;
+    top: 68px;
+    margin: 5px 0px 10px 50px;
+  }
+    #search-label {
+      float:left;
+      font-family: "Myriad Pro";
+      font-size: 14px;
+      font-weight: bold;
+      left: 140px;
+      margin-top: 5px;
+    }
+    #search-textbox{
+      margin-left: 5px;
+      width: 300px;
+    }
+    #search-button{
+      padding: 4px 6px 5px 6px;
+    }
+    #cart-button{
+      height: 70px;
+      width: 70px;
+      margin-left: 120px;
+    }
+
+/************************************************************************
+ * footer
+ ************************************************************************/
+#footer {
+  bottom:0px;
+  width:100%;
+  height:60px;
+  text-align:center;
+}
+.lnkFooter {
+  margin:10px;
+}

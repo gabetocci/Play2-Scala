@@ -1,0 +1,25 @@
+@(documentList: Map[Int,Document])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("StealStation :: Where everything is a Steal!") {
+  <div class="span9">
+
+    <div class="hero-unit">
+	  
+      <h3>Documents</h3>
+      
+      <dl>
+        @documentList.map { 
+          case (id, d) => {
+            <dt>@d.description</dt>
+            <dd>@d.amountDue</dd>
+          }
+        }
+      </dl>
+
+    </div><!-- /hero-unit -->
+      
+  </div>      
+}

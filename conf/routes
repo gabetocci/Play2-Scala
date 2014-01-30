@@ -1,0 +1,36 @@
+### Routes
+# This file defines all application routes (Higher priority routes first)
+
+### Webuser Actions
+GET         /                                  controllers.Catalog.index
+
+### Administrative Actions
+GET         /admin                             controllers.Admin.index
+
+# Accounting
+GET         /accounting/document/create        controllers.Accounting.createDocument
+POST        /accounting/document/submit        controllers.Accounting.submitDocument
+GET         /accounting/documents              controllers.Accounting.documents
+GET         /accounting/accounts               controllers.Accounting.accounts
+GET         /accounting/accounts/json          controllers.Accounting.accountsJs
+POST        /accounting/accounts               controllers.Accounting.saveAccount
+
+#Admin
+GET         /system                            controllers.System.index
+GET         /system/recordtypes                controllers.System.recordTypes
+POST        /system/recordtypes                controllers.System.saveRecordType
+GET         /system/recordtypes/exists         controllers.System.recordTypeExists
+
+### Testing Pages
+GET         /test/1                            controllers.ApplicationTest.testRequest
+GET         /test/2                            controllers.ApplicationTest.testTodo
+GET         /test/3                            controllers.ApplicationTest.testSimpleResult
+GET         /test/4                            controllers.ApplicationTest.testXML
+GET         /test/5                            controllers.ApplicationTest.testCookie
+GET         /test/6                            controllers.ApplicationTest.testDatabase
+GET         /test/json1                        controllers.ApplicationTest.json1
+POST        /test/json2                        controllers.ApplicationTest.json2
+GET         /test/:id                          controllers.ApplicationTest.testParameter(id: Int)
+
+### Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file                      controllers.Assets.at(path="/public", file)

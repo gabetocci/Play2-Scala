@@ -1,0 +1,78 @@
+<!-- header -->
+
+  <!-- top nav bar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a href="#" class="brand"><img src="@routes.Assets.at("img/logo.png")" id="nav-logo" /> </a>
+
+        <div class="nav-collapse collapse">
+
+          <div class="pull-right" id="login-label">
+            <span>Logged in as </span>
+            <a href="#" id="login-link">FirstName</a>
+          </div>
+
+          <ul class="nav">
+            <li><a href="#">Steal of the Day</a></li>
+            <li><a href="#">Hot Products</a></li>
+            <li><a href="#">New Products</a></li>
+            <li><a href="#">My Account</a></li>
+          </ul>
+
+          <!-- Login box -->
+          <div id="login-box">
+            <p>Sign in to your account <a href="#" id="login-close-btn">(x)</a> </p>
+            <form>
+              <p><span class="title">Email Address: </span><input name="" type="text" /></p>
+              <p><span class="title">Password: </span><input name="" type="password" /></p>
+              <p><input class="general-button" name="" type="button" value="Sign In" /></p>
+              <p><a href="#" >Forgot your password?</a> | <a href="#" >Help</a></p>
+            </form>
+          </div>
+          <div id="dialog-box-background"></div>
+          <!-- /Login Popup -->
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- /top nav bar -->
+
+  <!-- nav menu -->
+  <div id="nav-menu">
+
+    <div id="department-menu">
+      <a href="#" ><img src="@routes.Assets.at("img/department-menu.png")" id="departments-button" /></a>
+    </div>
+
+    <div id="search-bar" class="float-left">
+
+      <div id="search-label" class="float-left">Search</div>
+
+      <div class="float-left">
+        <input id="search-textbox" type="text" placeholder="Eg : Most popular product names here" autocomplete="off" />
+      </div>
+
+      <div class="float-left">
+        <input id="search-button" class="general-button" name="" type="button" value="Go" />
+      </div>
+
+    </div>
+
+    <div class="float-left">
+      <a href="#"><img src="@routes.Assets.at("img/thief-cart.jpg")" id="cart-button" alt="View Your Cart" /> </a>
+    </div>
+
+  </div>
+  <!-- /nav menu -->
+
+<!-- /header -->

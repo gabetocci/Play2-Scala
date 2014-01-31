@@ -34,7 +34,8 @@ object Accounting extends Controller {
     (request.body \ "name").asOpt[String].map { name => // unused for now
       
       Ok(Json.toJson(request.body))
-      
+
+      //
       // save to db
       // evaluate success of db transaction
       // send and log response

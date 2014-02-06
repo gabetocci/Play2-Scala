@@ -1,0 +1,30 @@
+
+/************************************************************************
+ * index view
+ ************************************************************************/
+ul.productGrid {
+  margin: 0px;
+}
+ul.productGrid li {
+  width: 150px;
+  margin: 5px 10px 5px 0px;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  *zoom: 1;
+}
+
+.gridWrapper {
+  margin-left: 10px;
+}
+
+
+#jumboContainer {
+  width: 975px;
+  overflow: hidden;
+}
+#jumboRight {
+  overflow: hidden;
+  margin-left: 20px;
+  text-align: right;
+}

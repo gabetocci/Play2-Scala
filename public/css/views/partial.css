@@ -68,12 +68,13 @@ a#login-link:hover {
 }
   #department-menu {
     float:left;
+    margin: 10px 0px 0px 10px;
   }
   #search-bar {
     overflow: hidden;
     left: 250px;
     top: 68px;
-    margin: 5px 0px 10px 50px;
+    margin: 17px 0px 10px 40px;
   }
     #search-label {
       float:left;

@@ -1,8 +1,10 @@
 @(title: String)(content: Html)
+<!DOCTYPE html>
+
 
 <!--(title: String)(headInsert: Html = Html.empty)(content: Html)(implicit user: Option[User] = None)-->
 
-<!DOCTYPE html>
+
 
 <html lang="en">
     <head>
@@ -16,11 +18,11 @@
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("img/favicon.png")" />
 
         <!-- jquery  -->
-        <script src="@routes.Assets.at("js/jquery-1.9.0.min.js")"></script>
-        <script src="@routes.Assets.at("js/jquery.validate.min.js")"></script>
+        <script src="@routes.Assets.at("js/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("js/jquery.validate.min.js")" type="text/javascript"></script>
 
         <!-- bootstrap  -->
-        <link  href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet">
+        <link  href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet" type="text/css" />
         <style type="text/css">
         body {
             padding-top: 60px;
@@ -38,24 +40,24 @@
             }
         }
         </style>
-        <link  href="@routes.Assets.at("css/bootstrap-responsive.css")" rel="stylesheet">
-        <script src="@routes.Assets.at("js/bootstrap.js")"></script>
+        <link  href="@routes.Assets.at("css/bootstrap-responsive.css")" rel="stylesheet" type="text/css" />
+        <script src="@routes.Assets.at("js/bootstrap.js")" type="text/javascript"></script>
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-            <script src="@routes.Assets.at("js/html5shiv.js")"></script>
+            <script src="@routes.Assets.at("js/html5shiv.js")" type="text/javascript"></script>
         <![endif]-->
 
         <!-- datatables -->
-        <link  href="@routes.Assets.at("css/jquery.dataTables.css")" rel="stylesheet" />
-        <script src="@routes.Assets.at("js/jquery.dataTables.js")"></script>
+        <link  href="@routes.Assets.at("css/jquery.dataTables.css")" rel="stylesheet" type="text/css" />
+        <script src="@routes.Assets.at("js/jquery.dataTables.js")" type="text/javascript"></script>
 
         <!-- tess core -->
-        <link  href="@routes.Assets.at("css/views/main.css")" rel="stylesheet">
-        <link  href="@routes.Assets.at("css/views/partial.css")" rel="stylesheet">
-        <script src="@routes.Assets.at("js/tess-core.js")"></script>
-        <script src="@routes.Assets.at("js/views/partial.js")"></script>
-        <script src="@routes.Assets.at("js/views/main.js")"></script>
-        <script type="application/javascript">
+        <link  href="@routes.Assets.at("css/views/main.css")" rel="stylesheet" type="text/css" />
+        <link  href="@routes.Assets.at("css/views/partial.css")" rel="stylesheet" type="text/css" />
+        <script src="@routes.Assets.at("js/tess-core.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("js/views/partial.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("js/views/main.js")" type="text/javascript"></script>
+        <script type="text/javascript">
           $(document).ready(function() {
             main(tess);
           });

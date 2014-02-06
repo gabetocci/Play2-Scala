@@ -41,6 +41,7 @@ var tess = function () {
       });
     },
 /*
+	// TODO
     showPopup: function (popup_selector) {
       $("#popup_background").css({"opacity":"0.4"});
       $("#popup_background").fadeIn("slow");

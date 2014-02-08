@@ -91,11 +91,24 @@ a#login-link:hover {
     }
     #search-button{
       padding: 4px 6px 5px 6px;
+      margin-left: 1px;
+    }
+    #cart-anchor{
+      padding: 0px;
+    }
+    #cart-container{
+      width: 110px;
     }
     #cart-button{
-      height: 70px;
-      width: 70px;
-      margin-left: 120px;
+      height: 40px;
+      width: 40px;
+      margin-left: 20px;
+      float: left;
+    }
+    #cart-label{
+      width: 40px;
+      float: right;
+      text-align: center;
     }
 
 /************************************************************************

@@ -2,16 +2,6 @@
 /************************************************************************
  * index view
  ************************************************************************/
-#jumboContainer {
-  width: 975px;
-  overflow: hidden;
-}
-#jumboRight {
-  overflow: hidden;
-  margin-left: 20px;
-  text-align: right;
-}
-
 .gridWrapper {
   margin-left: 10px;
 }

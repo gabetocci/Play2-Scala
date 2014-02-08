@@ -11,7 +11,7 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a href="#" class="brand"><img src="@routes.Assets.at("img/logo.png")" id="nav-logo" /> </a>
+        <a href="/" class="brand"><img src="@routes.Assets.at("img/logo.png")" id="nav-logo" /> </a>
 
         <div class="nav-collapse collapse">
 
@@ -25,6 +25,14 @@
             <li><a href="#">Hot Products</a></li>
             <li><a href="#">New Products</a></li>
             <li><a href="#">My Account</a></li>
+            <li>
+              <a href="#" id="cart-anchor">
+                <div id="cart-container">
+                  <img src="@routes.Assets.at("img/cart2.png")" alt="View Your Cart" id="cart-button" />
+                  <div id="cart-label">Cart -empty-</div>
+                </div>
+              </a>
+            </li>
           </ul>
 
           <!-- Login box -->
@@ -51,7 +59,7 @@
   <div id="nav-menu">
 
     <div id="department-menu">
-      <a href="#" ><img src="@routes.Assets.at("img/department-menu.png")" id="departments-button" /></a>
+      <a href="/catalog" ><img src="@routes.Assets.at("img/department-menu.png")" id="departments-button" /></a>
     </div>
 
     <div id="search-bar" class="float-left">
@@ -69,7 +77,7 @@
     </div>
 
     <div class="float-left">
-      <a href="#"><img src="@routes.Assets.at("img/thief-cart.jpg")" id="cart-button" alt="View Your Cart" /> </a>
+      <a href="#"></a>
     </div>
 
   </div>

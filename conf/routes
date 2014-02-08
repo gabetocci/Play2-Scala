@@ -3,6 +3,7 @@
 
 ### Webuser Actions
 GET         /                                  controllers.Catalog.index
+GET         /catalog                           controllers.Catalog.catalog
 
 ### Administrative Actions
 GET         /admin                             controllers.Admin.index

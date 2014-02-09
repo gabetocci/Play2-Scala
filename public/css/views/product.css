@@ -1,7 +1,36 @@
 
 /************************************************************************
- * catalog view
+ * product view
  ************************************************************************/
+
+#leftCol {
+
+}
+#centerCol {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+}
+#rightCol{
+  margin: 10px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#ddlOptions{
+  width: 70px;
+}
+#ddlQty{
+  width: 70px;
+}
+#addcart-button{
+  padding: 5px;
+  margin-bottom: 2px;
+}
+
 .gridWrapper {
   margin-left: 10px;
 }

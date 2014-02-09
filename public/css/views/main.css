@@ -6,10 +6,6 @@
   float: left;
 }
 
-.test_button {
-  background: rgb(66, 184, 221);
-}
-
 .general-button{
   background-color:#ca3c3c;
   background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ca3c3c),color-stop(100%,#ba3333));

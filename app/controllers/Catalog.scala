@@ -17,4 +17,8 @@ object Catalog extends Controller {
     Ok(html.catalog("Search Results / Product Catalog"))
   }
 
+  def product(id: Int) = Action {
+    Ok(html.product("Product Number " + id))
+  }
+
 }

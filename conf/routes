@@ -4,6 +4,7 @@
 ### Webuser Actions
 GET         /                                  controllers.Catalog.index
 GET         /catalog                           controllers.Catalog.catalog
+GET         /product/:id                       controllers.Catalog.product(id: Int)
 
 ### Administrative Actions
 GET         /admin                             controllers.Admin.index

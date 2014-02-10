@@ -27,6 +27,14 @@ function partialViewMain (tess) {
     $("#nav-search-in-content").text(Search_Str);
   });
 
+  // shopping cart
+  simpleCart({
+    checkout: {
+      type: "PayPal" ,
+      email: "payments@stealstation.com"
+    }
+  });
+
   /************************************************************************
    * footer
    ************************************************************************/

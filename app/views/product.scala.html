@@ -8,40 +8,9 @@
   <script type="text/javascript" src="@routes.Assets.at("galleryView/js/jquery.galleryview-3.0-dev.js")"></script>
   <link type="text/css" rel="stylesheet" href="@routes.Assets.at("galleryView/css/jquery.galleryview-3.0-dev.css")" />
 
-  <!-- SimpleCart -->
-  <script type="text/javascript" src="@routes.Assets.at("js/simpleCart.js")"></script>
-
   <!-- Page Specific CSS and Javascript -->
   <script src="@routes.Assets.at("js/views/product.js")"></script>
   <link type="text/css" rel="stylesheet" href="@routes.Assets.at("css/views/product.css")" />
-
-
-  <script>
-  simpleCart({
-  checkout: {
-  type: "PayPal" ,
-  email: "you@@yours.com"
-  }
-  });
-  </script>
-
-
-  <div class="cartInfo"><span class="simpleCart_quantity"></span> items</div>
-  <div id="cartPopover">
-    <div id="triangle">&#x25B2;</div>
-    <div class="simpleCart_items"></div>
-    <div id="cartData" class="clearfix">
-      <div class="left"><strong>Items: </strong><span class="simpleCart_quantity"></span></div>
-      <div class="right"><strong>Total: </strong><span class="simpleCart_total"></span></div>
-    </div>
-    <div id="popoverButtons" class="clearfix">
-      <a href="/cart/" class="hudbtn left">View</a>
-      <a href="javascript:;" class="simpleCart_checkout hudbtn primary right">Checkout</a>
-    </div>
-  </div><!--End #cartPopover-->
-
-
-
 
   <!-- responsive row -->
   <div class="row-fluid">

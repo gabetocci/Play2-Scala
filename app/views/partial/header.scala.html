@@ -25,14 +25,15 @@
             <li><a href="#">Hot Products</a></li>
             <li><a href="#">New Products</a></li>
             <li><a href="#">My Account</a></li>
-            <li>
-              <a href="#" id="cart-anchor">
+
+            <li><a href="#" id="cart-anchor">
+
                 <div id="cart-container">
                   <img src="@routes.Assets.at("img/cart2.png")" alt="View Your Cart" id="cart-button" />
-                  <div id="cart-label">Cart -empty-</div>
+                  <div class="cartInfo"><span class="simpleCart_quantity"></span> items</div>
                 </div>
-              </a>
-            </li>
+
+            </a></li>
           </ul>
 
           <!-- Login box -->
@@ -63,17 +64,13 @@
     </div>
 
     <div id="search-bar" class="float-left">
-
       <div id="search-label" class="float-left">Search</div>
-
       <div class="float-left">
         <input id="search-textbox" type="text" placeholder="Eg : Most popular product names here" autocomplete="off" />
       </div>
-
       <div class="float-left">
         <input type="button" id="search-button" class="general-button" value="Go" />
       </div>
-
     </div>
 
     <div class="float-left">
@@ -84,3 +81,19 @@
   <!-- /nav menu -->
 
 <!-- /header -->
+
+
+<!-- cartPopover -->
+  <div id="cartPopover">
+    <div id="triangle">&#x25B2;</div>
+    <div class="simpleCart_items"></div>
+    <div id="cartData" class="clearfix">
+      <div class="left"><strong>Items: </strong><span class="simpleCart_quantity"></span></div>
+      <div class="right"><strong>Total: </strong><span class="simpleCart_total"></span></div>
+    </div>
+    <div id="popoverButtons" class="clearfix">
+      <a href="/cart/" class="hudbtn left">View</a>
+      <a href="javascript:;" class="simpleCart_checkout hudbtn primary right">Checkout</a>
+    </div>
+  </div>
+<!-- /#cartPopover-->

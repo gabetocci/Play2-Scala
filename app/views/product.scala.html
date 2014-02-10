@@ -8,9 +8,40 @@
   <script type="text/javascript" src="@routes.Assets.at("galleryView/js/jquery.galleryview-3.0-dev.js")"></script>
   <link type="text/css" rel="stylesheet" href="@routes.Assets.at("galleryView/css/jquery.galleryview-3.0-dev.css")" />
 
+  <!-- SimpleCart -->
+  <script type="text/javascript" src="@routes.Assets.at("js/simpleCart.js")"></script>
+
   <!-- Page Specific CSS and Javascript -->
   <script src="@routes.Assets.at("js/views/product.js")"></script>
   <link type="text/css" rel="stylesheet" href="@routes.Assets.at("css/views/product.css")" />
+
+
+  <script>
+  simpleCart({
+  checkout: {
+  type: "PayPal" ,
+  email: "you@@yours.com"
+  }
+  });
+  </script>
+
+
+  <div class="cartInfo"><span class="simpleCart_quantity"></span> items</div>
+  <div id="cartPopover">
+    <div id="triangle">&#x25B2;</div>
+    <div class="simpleCart_items"></div>
+    <div id="cartData" class="clearfix">
+      <div class="left"><strong>Items: </strong><span class="simpleCart_quantity"></span></div>
+      <div class="right"><strong>Total: </strong><span class="simpleCart_total"></span></div>
+    </div>
+    <div id="popoverButtons" class="clearfix">
+      <a href="/cart/" class="hudbtn left">View</a>
+      <a href="javascript:;" class="simpleCart_checkout hudbtn primary right">Checkout</a>
+    </div>
+  </div><!--End #cartPopover-->
+
+
+
 
   <!-- responsive row -->
   <div class="row-fluid">
@@ -18,47 +49,49 @@
     <h5>@message</h5>
 
     <div class="span12">
+      <div class="simpleCart_shelfItem">
 
-      <div id="leftCol" class="float-left">
-        <ul id="imgGallery">
-          <li><img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" /></li>
-          <li><img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="Product 2 AD Here" /></li>
-          <li><img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" /></li>
-          <li><img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="Product 2 AD Here" /></li>
-          <li><img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" /></li>
-          <li><img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="Product 2 AD Here" /></li>
-          <li><img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" /></li>
-          <li><img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="Product 2 AD Here" /></li>
-        </ul>
+        <div id="leftCol" class="float-left">
+          <ul id="imgGallery">
+            <li><img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" /></li>
+            <li><img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="Product 2 AD Here" /></li>
+            <li><img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" /></li>
+            <li><img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="Product 2 AD Here" /></li>
+            <li><img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" /></li>
+            <li><img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="Product 2 AD Here" /></li>
+            <li><img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" /></li>
+            <li><img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="Product 2 AD Here" /></li>
+          </ul>
+        </div>
+
+        <div id="centerCol" class="float-left">
+          <h5 class="item_name">Cool TShirt</h5>
+          <p>Brand</p>
+          <p>Options:
+            <select id="ddlOptions">
+              <option value="Blue" selected="true">Blue</option>
+              <option value="Red">Red</option>
+            </select>
+          </p>
+          <p>$99.99</p>
+          <span class="item_price">$75.99</span>
+          <p><a href="#">27 Reviews</a></p>
+          <p><a href="#">4.5 Star Rating</a></p>
+        </div><!-- / -->
+
+        <div id="rightCol" class="float-left">
+          <p>Qty:
+            <select id="ddlQty" class="item_Quantity">
+              <option value="1" selected="true">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </p>
+            <input type="button" id="addcart-button" class="general-button item_add" value="Add to Cart" />
+        </div><!-- / -->
+
       </div>
-
-      <div id="centerCol" class="float-left">
-        <h5>@message</h5>
-        <p>Brand</p>
-        <p>Options:
-          <select id="ddlOptions">
-            <option value="Blue" selected="true">Blue</option>
-            <option value="Red">Red</option>
-          </select>
-        </p>
-        <p>$99.99</p>
-        <p>$79.99</p>
-        <p><a href="#">27 Reviews</a></p>
-        <p><a href="#">4.5 Star Rating</a></p>
-      </div><!-- / -->
-
-      <div id="rightCol" class="float-left">
-        <p>Qty:
-          <select id="ddlQty">
-            <option value="1" selected="true">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select>
-        </p>
-        <input type="button" id="addcart-button" class="general-button" value="Add to Cart" />
-      </div><!-- / -->
-
     </div><!-- /mainWrapper -->
 
   </div><!-- /.row-fluid -->

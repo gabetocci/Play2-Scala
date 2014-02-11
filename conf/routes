@@ -2,9 +2,9 @@
 # This file defines all application routes (Higher priority routes first)
 
 ### Webuser Actions
-GET         /                                  controllers.Catalog.index
-GET         /catalog                           controllers.Catalog.catalog
-GET         /product/:id                       controllers.Catalog.product(id: Int)
+GET         /                                  controllers.Storefront.index
+GET         /catalog                           controllers.Storefront.catalog
+GET         /product/:id                       controllers.Storefront.product(id: Int)
 
 ### Administrative Actions
 GET         /admin                             controllers.Admin.index

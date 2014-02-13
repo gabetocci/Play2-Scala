@@ -8,7 +8,11 @@ import anorm.SqlParser._
 
 import scala.language.postfixOps
 
-case class Product(producttype: String, name: String)
+case class Product( id:          Int,
+                    name:        String,
+                    description: String,
+                    brand:       String,
+                    category:    String)
 
 object Product {
 
@@ -16,9 +20,13 @@ object Product {
    * Parse a Product from a ResultSet
    */
   val simple = {
-    get[String]("product.type") ~
-    get[String]("product.name") map {
-    case producttype~name => Product(producttype, name)
+    get[Int]   ("id") ~
+    get[String]("name") ~
+    get[String]("description") ~
+    get[String]("brand") ~
+    get[String]("category") map {
+    case id~name~description~brand~category =>
+      Product(id, name, description, brand, category)
     }
   }
 
@@ -30,9 +38,16 @@ object Product {
     DB.withConnection { implicit connection =>
       SQL(
         """
-          select productsku.type,
-                 productsku.name
+          select productsku.id          as id,
+                 productsku.name        as name,
+                 productsku.description as description,
+                 brand.name             as brand,
+                 productcategory.name   as category
             from productsku
+            left outer join brand
+                 on brand.id = productsku.brandid
+            left outer join productcategory
+                 on productcategory.id = productsku.productcategoryid
         """
       ).as(Product.simple *)
     }
@@ -42,9 +57,16 @@ object Product {
     DB.withConnection { implicit connection =>
       SQL(
         """
-          select productsku.type,
-                 productsku.name
+          select productsku.id,
+                 productsku.name,
+                 productsku.description,
+                 brand.name,
+                 productcategory.name
             from productsku
+            left outer join brand
+                 on brand.id = productsku.brandid
+            left outer join productcategory
+                 on productcategory.id = productsku.productcategoryid
            where productsku.id = {id}
         """
       ).on(
@@ -61,17 +83,21 @@ object Product {
   def create(product: Product): Product = {
     DB.withConnection { implicit connection =>
 
-    //TODO insert into entity table
+    //TODO brand and cateogory name <> id
 
       SQL(
         """
-          insert into productsku values (
-            {type}, {name}
+          insert into productsku (
+            productcategoryid,brandid,name,description)
+          values (
+            'ACTIVE',{productcategoryid},{brandid},{name},{description})
           )
         """
       ).on(
-          'type -> product.producttype,
-          'name -> product.name
+          'productcategoryid -> product.category,
+          'brandid -> product.brand,
+          'name -> product.name,
+          'description -> product.description
         ).executeUpdate()
 
       return product

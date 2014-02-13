@@ -2,6 +2,7 @@ package controllers
 
 import play.api.mvc._
 import views._
+import models._
 
 /**
  * Created by GT on 1/24/14.
@@ -13,8 +14,8 @@ object Storefront extends Controller {
     Ok(html.index("Happy Shopping"))
   }
 
-  def catalog = Action {
-    Ok(html.catalog("Search Results / Product Catalog"))
+  def catalog = Action { implicit request =>
+    Ok(html.catalog(Product.findAll, "Search Results / Product Catalog"))
   }
 
   def product(id: Int) = Action {

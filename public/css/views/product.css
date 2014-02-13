@@ -45,3 +45,26 @@ ul.productGrid li {
   *display: inline;
   *zoom: 1;
 }
+
+.greyLabel {
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+  color: rgb(102, 102, 102);
+  font-size: 13px;
+  text-align: right;
+}
+#msrp {
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+  text-decoration: line-through;
+  color: rgb(102, 102, 102);
+  font-size: 13px;
+}
+#price {
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+  font-weight: bold;
+  color: #ca3c3c;
+  font-size: 17px;
+}
+#savings {
+  font-size: 13px;
+  color: #ca3c3c;
+}

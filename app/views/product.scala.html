@@ -1,4 +1,4 @@
-@(message: String)
+@(product: Product)
 
 @main("StealStation :: Find a Steal of a Deal!") {
 
@@ -15,7 +15,7 @@
   <!-- responsive row -->
   <div class="row-fluid">
 
-    <h5>@message</h5>
+    <h5>@product.name</h5>
 
     <div class="span12">
       <div class="simpleCart_shelfItem">
@@ -42,8 +42,28 @@
               <option value="Red">Red</option>
             </select>
           </p>
-          <p>$99.99</p>
-          <span class="item_price">$75.99</span>
+
+          <table>
+            <tr>
+              <td class="greyLabel">List Price:</td>
+              <td id="msrp">$@product.msrp</td>
+            </tr>
+            <tr>
+              <td class="greyLabel">Price:</td>
+              <td id="price" class="item_price">$@product.price</td>
+            </tr>
+            <tr>
+              <td class="greyLabel">You Save:</td>
+              <td id="savings">
+                $@product.msrp.subtract(product.price)
+                (@product.price.divide(product.msrp, 0).movePointRight(2)%)
+              </td>
+            </tr>
+            </table>
+
+          <br />
+          <br />
+
           <p><a href="#">27 Reviews</a></p>
           <p><a href="#">4.5 Star Rating</a></p>
         </div><!-- / -->

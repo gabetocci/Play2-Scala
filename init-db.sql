@@ -471,6 +471,10 @@ insert into RecordType (Type, Name, isactive)
 values ('ACTIVE','Active', 't');
 insert into RecordType (Type, Name, isactive)
 values ('INACTIVE','Inactive', 't');
+insert into RecordType (Type, Name, isactive)
+values ('MSRP','Suggested Retail Price', 't');
+insert into RecordType (Type, Name, isactive)
+values ('Sale','Sale', 't');
 
 insert into UserAccount (EntityId, Username, Password)
 values (1, 'gabrieltocci', 'password');
@@ -507,12 +511,25 @@ insert into productsku ( type, productcategoryid, brandid, name, description )
 values ('ACTIVE',1,1,'PCT Assist','PCT Assist is designed to help increase natural testosterone levels during the period of Post Cycle Therapy (PCT) or as part of a natural testosterone enhancement regimen.');
 insert into productsku ( type, productcategoryid, brandid, name, description )
 values ('ACTIVE',2,2,'Havoc','Being completely non-estrogenic, Havoc offers an ideal composition to maximize strength and lean mass gains, with minimal side effects such as lethargy or gyno. RPN Havoc supplement embodies the most recent in a long, distinguished line of hormonal products designed to optimize the bodys ability to maximize muscular hypertrophy.');
+
+insert into skuprice ( type, skuid, price )
+values ('ACTIVE',1,24.95);
+insert into skuprice ( type, skuid, price )
+values ('ACTIVE',2,34.95);
+insert into skuprice ( type, skuid, price )
+values ('ACTIVE',3,27.45);
+insert into skuprice ( type, skuid, price )
+values ('MSRP',1,41.99);
+insert into skuprice ( type, skuid, price )
+values ('MSRP',2,49.99);
+insert into skuprice ( type, skuid, price )
+values ('MSRP',3,69.99);
 commit;
 
 select * from brand;
 select * from ProductCategory;
 select * from ProductSku;
-
+select * from SkuPrice;
 
 
 /*
@@ -521,5 +538,5 @@ select * from ProductSku;
 select * from SkuAttribute;
 select * from SkuCost;
 select * from SkuImage;
-select * from SkuPrice;
+
 8/

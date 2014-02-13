@@ -1,14 +1,13 @@
 package controllers
 
 import play.api.mvc._
+
 import views._
 import models._
 
-/**
- * Created by GT on 1/24/14.
- */
-
 object Storefront extends Controller {
+
+  val Home = Redirect(routes.Storefront.index())
 
   def index = Action {
     Ok(html.index("Happy Shopping"))
@@ -19,7 +18,9 @@ object Storefront extends Controller {
   }
 
   def product(id: Int) = Action {
-    Ok(html.product("Product Number " + id))
+    Product.find(id).map { product =>
+      Ok(html.product(product))
+    }.getOrElse(Redirect(routes.Storefront.index()))
   }
 
 }

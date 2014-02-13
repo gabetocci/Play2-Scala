@@ -15,100 +15,19 @@
 
       <ul class="productGrid">
         @products.map {
-          case (p) => {
+          case (product) => {
             <li>
-              <a href="/product/@p.id">
-                <img src="@routes.Assets.at("img/products/"+p.id+".png")" alt="@p.name" />
-                <h4>@p.name</h4>
-                <p>@p.brand</p>
+              <a href="/product/@product.id">
+                <img src="@routes.Assets.at("img/products/"+product.id+".png")" alt="@product.name" />
+                <div class="name">@product.name</div>
               </a>
+              <div class="priceContainer">
+                <div class="msrp">$@product.msrp</div>
+                <div class="price">$@product.price</div>
+              </div>
             </li>
           }
         }
-        <li>
-          <a href="/product/1">
-            <img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="This is an AD for product 1" />
-            <h4>Mike the Frog Shirt (Orange)</h4>
-            <p>$25.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad1.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="@routes.Assets.at("img/ads/ad2.jpg")" alt="This is an AD for product 1" />
-            <h4>Logo Shirt (Gray)</h4>
-            <p>$20.00</p>
-          </a>
-        </li>
       </ul>
 
     </div><!-- /gridWrapper -->

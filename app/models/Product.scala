@@ -6,11 +6,13 @@ import play.api.Play.current
 import anorm._
 import anorm.SqlParser._
 
-import scala.language.postfixOps
+import java.math.BigDecimal
 
 case class Product( id:          Int,
                     name:        String,
                     description: String,
+                    price:       BigDecimal,
+                    msrp:       BigDecimal,
                     brand:       String,
                     category:    String)
 
@@ -20,13 +22,15 @@ object Product {
    * Parse a Product from a ResultSet
    */
   val simple = {
-    get[Int]   ("id") ~
+    get[Int]("id") ~
     get[String]("name") ~
     get[String]("description") ~
+    get[BigDecimal]("price") ~
+    get[BigDecimal]("msrp") ~
     get[String]("brand") ~
     get[String]("category") map {
-    case id~name~description~brand~category =>
-      Product(id, name, description, brand, category)
+    case id~name~description~price~msrp~brand~category =>
+      Product(id, name, description, price, msrp, brand, category)
     }
   }
 
@@ -41,9 +45,17 @@ object Product {
           select productsku.id          as id,
                  productsku.name        as name,
                  productsku.description as description,
+                 price.price            as price,
+                 msrp.price             as msrp,
                  brand.name             as brand,
                  productcategory.name   as category
             from productsku
+            left outer join skuprice as msrp
+                 on msrp.skuid = productsku.id
+                 and msrp.type = 'MSRP'
+            left outer join skuprice as price
+                 on price.skuid = productsku.id
+                 and price.type = 'ACTIVE'
             left outer join brand
                  on brand.id = productsku.brandid
             left outer join productcategory
@@ -57,12 +69,20 @@ object Product {
     DB.withConnection { implicit connection =>
       SQL(
         """
-          select productsku.id,
-                 productsku.name,
-                 productsku.description,
-                 brand.name,
-                 productcategory.name
+          select productsku.id            as id,
+                 productsku.name          as name,
+                 productsku.description   as description,
+                 price.price              as price,
+                 msrp.price               as msrp,
+                 brand.name               as brand,
+                 productcategory.name     as category
             from productsku
+            left outer join skuprice as msrp
+                 on msrp.skuid = productsku.id
+                 and msrp.type = 'MSRP'
+            left outer join skuprice as price
+                 on price.skuid = productsku.id
+                 and price.type = 'ACTIVE'
             left outer join brand
                  on brand.id = productsku.brandid
             left outer join productcategory

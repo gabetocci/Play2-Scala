@@ -16,7 +16,9 @@
       show_filmstrip_nav: false,
       autoplay: false,
       filmstrip_position: 'left',
-      frame_scale: 'fit'
+      frame_scale: 'fit',
+      panel_scale: 'fit',
+      include_anchor: false
     });
   });
 

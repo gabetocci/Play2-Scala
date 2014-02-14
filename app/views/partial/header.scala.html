@@ -15,28 +15,33 @@
 
         <div class="nav-collapse collapse">
 
+          <!-- username
           <div class="pull-right" id="login-label">
             <span>Logged in as </span>
             <a href="#" id="login-link">FirstName</a>
           </div>
+          -->
 
           <ul class="nav">
-            <li><a href="#">Steal of the Day</a></li>
-            <li><a href="#">Hot Products</a></li>
-            <li><a href="#">New Products</a></li>
-            <li><a href="#">My Account</a></li>
+            <li><a href="/product/2">Steal of the Day</a></li>
+            <li><a href="/catalog">Hot Products</a></li>
+            <li><a href="/catalog">New Products</a></li>
+            <!--<li><a href="#">My Account</a></li>-->
 
             <li><a href="#" id="cart-anchor">
 
                 <div id="cart-container">
                   <img src="@routes.Assets.at("img/cart2.png")" alt="View Your Cart" id="cart-button" />
-                  <div class="cartInfo"><span class="simpleCart_quantity"></span> items</div>
+                  <div class="cartInfo">
+                    <img src="@routes.Assets.at("img/cartPopoverClose.jpg")" alt="View Your Cart" id="cartPopoverClose"  />
+                    <span class="simpleCart_quantity"></span> items
+                  </div>
                 </div>
 
             </a></li>
           </ul>
 
-          <!-- Login box -->
+          <!-- Login box
           <div id="login-box">
             <p>Sign in to your account <a href="#" id="login-close-btn">(x)</a> </p>
             <form>
@@ -73,15 +78,10 @@
       </div>
     </div>
 
-    <div class="float-left">
-      <a href="#"></a>
-    </div>
-
   </div>
   <!-- /nav menu -->
 
 <!-- /header -->
-
 
 <!-- cartPopover -->
   <div id="cartPopover">

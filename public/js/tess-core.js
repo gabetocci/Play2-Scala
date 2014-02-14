@@ -63,7 +63,7 @@ var tess = function () {
       $(selector)
         .addClass("error-input")
         .focus(function () {
-          $(this).removeClass("error-input")
+          $(this).removeClass("error-input");
         });
     },
 

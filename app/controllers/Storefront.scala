@@ -7,10 +7,11 @@ import models._
 
 object Storefront extends Controller {
 
+  // TODO Move to Base Controller
   val Home = Redirect(routes.Storefront.index())
 
   def index = Action {
-    Ok(html.index("Happy Shopping"))
+    Ok(html.index(Product.findAll, "Welcome to StealStation"))
   }
 
   def catalog = Action { implicit request =>
@@ -20,7 +21,7 @@ object Storefront extends Controller {
   def product(id: Int) = Action {
     Product.find(id).map { product =>
       Ok(html.product(product))
-    }.getOrElse(Redirect(routes.Storefront.index()))
+    }.getOrElse(Home)
   }
 
 }

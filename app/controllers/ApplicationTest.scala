@@ -15,12 +15,6 @@ import play.api.libs.json._
 
 object ApplicationTest extends Controller {
 
-  def index = Action {
-    DB.withConnection { implicit c =>
-      Ok(html.index("Your new application is ready. Successfully connected to database. "))
-    }
-  }
-
   def testRequest = Action { request => 
     Logger.info("Testing System Logger")
     Ok("received request ok! " + request )

@@ -503,14 +503,17 @@ if (typeof Object.create !== 'function') {
 						_img.show();
 					}
 
-          // toccig: add image href
-          var _href = _img.attr('src')
-            .slice(0, -4)
-            .slice(12);
-          _img.wrap('<a href="'+ _href +'"></a>');
+          // toccig
+          if(self.opts.include_anchor) {
+
+            var _href = _img.attr('src')
+              .slice(0, -4)
+              .slice(16);
+            _img.wrap('<a href="product/'+ _href +'"></a>');
+          }
 
         });
-				
+
 				// store eventual image container as data property
 				// append to temporary storage element and set src
 				if(self.opts.show_panels) {
@@ -1048,7 +1051,8 @@ if (typeof Object.create !== 'function') {
 		transition_speed: 1000, 		//INT - duration of panel/frame transition (in milliseconds)
 		transition_interval: 5000, 		//INT - delay between panel/frame transitions (in milliseconds)
 		easing: 'swing', 				//STRING - easing method to use for animations (jQuery provides 'swing' or 'linear', more available with jQuery UI or Easing plugin)
-		
+		include_anchor: true, 			//BOOLEAN - flag to wrap image in anchor
+
 		// Panel Options
 		show_panels: true, 				//BOOLEAN - flag to show or hide panel portion of gallery
 		show_panel_nav: true, 			//BOOLEAN - flag to show or hide panel navigation buttons

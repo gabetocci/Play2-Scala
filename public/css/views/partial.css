@@ -130,20 +130,20 @@ a#login-link:hover {
     .simpleCart_quantity{
       font-family:"Trebuchet MS",sans-serif;
     }
-
-
-
+    #cartPopoverClose{
+      display: none;
+    }
 
 /********************************
 	CART POPOVER
 ********************************/
 #cartPopover{
   position:absolute;
-  width:218px;
+  width:300px;
   top:72px;
-  right:14px;
+  left:500px;
   z-index:9999;
-  /*display:none;*/
+  display:none;
 
   color:#fff;
   text-shadow:1px 1px 0 rgba(0,0,0,.8);
@@ -179,6 +179,7 @@ a#login-link:hover {
   -moz-transform: scale(1.2,.8) translateY(1.5px);
   transform: scale(1.2,.8) translateY(1.5px);
 }
+
 #cartPopover .itemRow{
   border-bottom:1px solid #2B2D2E;
   border-top:1px solid #434547;

@@ -26,3 +26,21 @@ ul.productGrid li {
   *display: inline;
   *zoom: 1;
 }
+.priceContainer {
+  overflow: hidden;
+}
+.msrp {
+  float:left;
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+  text-decoration: line-through;
+  color: rgb(102, 102, 102);
+  font-size: 11px;
+}
+.price {
+  float:left;
+  margin-left: 5px;
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+  font-weight: bold;
+  color: #ca3c3c;
+  font-size: 14px;
+}

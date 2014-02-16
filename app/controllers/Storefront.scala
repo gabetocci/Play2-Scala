@@ -24,4 +24,8 @@ object Storefront extends Controller {
     }.getOrElse(Home)
   }
 
+  def cart = Action {
+    Ok(html.cart())
+  }
+
 }

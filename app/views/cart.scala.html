@@ -1,0 +1,54 @@
+@()
+
+@main("StealStation :: Find a Steal of a Deal!") {
+
+  <!-- Page Specific CSS and Javascript -->
+  <link type="text/css" rel="stylesheet" href="@routes.Assets.at("css/views/cart.css")" />
+
+  <hr />
+
+  <h5>Shopping Cart</h5>
+
+  <!-- Cart Items-->
+  <div id="cartWrapper">
+
+    <div class="simpleCart_items" ></div>
+
+    <div class="totalRow">
+      SubTotal: <span class="simpleCart_total"></span><br />
+      Tax: <span class="simpleCart_taxCost"></span><br />
+      Shipping: <span class="simpleCart_shippingCost"></span><br />
+      Final Total: <span class="simpleCart_finalTotal"></span><br />
+      Cart: <span class="simpleCart_total"></span> (<span class="simpleCart_quantity"></span> items)
+    </div>
+
+    <div id="cartEmpty">
+      <input type="button" class="grey-button simpleCart_empty" value="Empty Cart" />
+    </div>
+    <div id="cartCheckout">
+      <input type="button" class="general-button simpleCart_checkout" value="Check Out" />
+    </div>
+
+  </div>
+  <!-- /Cart Items -->
+
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <div class="float-left">
+    <img class="float-left" src="@routes.Assets.at("img/satisfaction.png")" alt="Satisfaction Guaranteed" />
+    <img class="float-left" src="@routes.Assets.at("img/paypal.png")" alt="Paypal Accepted" />
+  </div><!-- / -->
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+}

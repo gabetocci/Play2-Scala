@@ -41,19 +41,19 @@ function partialViewMain (tess) {
         return	"<span>"+item.get('quantity')+"</span>" +
           "<div>" +
             "<a href='javascript:;' class='simpleCart_increment'>" +
-              "<img src='/assets/img/increment.png' title='+1' alt='arrow up'/>" +
+              "<img src='/assets/img/arrow_up.png' title='+1' class='cartarrow' alt='arrow up' />" +
             "</a>" +
             "<a href='javascript:;' class='simpleCart_decrement'>" +
-              "<img src='/assets/img/decrement.png' title='-1' alt='arrow down'/>" +
+              "<img src='/assets/img/arrow_down.png' title='-1' class='cartarrow' alt='arrow down' />" +
             "</a>" +
           "</div>";
-      }, attr: 'custom' },
+      }, attr: 'custom', label: "Quantity" },
       //Name of the item
-      { attr: "name" , label: false },
+      { attr: "name" , label: "Name" },
       //Subtotal of that row (quantity of that item * the price)
-      { view: 'currency', attr: "total" , label: false  }
+      { view: 'currency', attr: "total" , label: "Price"  }
     ],
-    cartStyle: 'div',
+    cartStyle: 'table',
     checkout: {
       type: "PayPal" ,
       email: "payments@stealstation.com"
@@ -72,5 +72,3 @@ function partialViewMain (tess) {
   $("span#copyright").text(
     String.fromCharCode(169) + " " + year + " StealStation.com All Rights Reserved");
 }
-
-

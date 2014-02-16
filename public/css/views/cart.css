@@ -1,0 +1,73 @@
+#cartWrapper {
+  width: 500px;
+}
+.simpleCart_items > table {
+  width: 500px;
+}
+.simpleCart_items {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.headerRow {
+  color:#333;
+  border-bottom:1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  background: #ededed;
+  background: -moz-linear-gradient(top,  #f7f7f7 0%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#ededed));
+  background: -webkit-linear-gradient(top,  #f7f7f7 0%,#ededed 100%);
+  background: -o-linear-gradient(top,  #f7f7f7 0%,#ededed 100%);
+  background: -ms-linear-gradient(top,  #f7f7f7 0%,#ededed 100%);
+  background: linear-gradient(top,  #f7f7f7 0%,#ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ededed',GradientType=0 );
+}
+.itemRow {
+  color: #333;
+  border-bottom:1px solid #ccc;
+  padding: 10px;
+}
+.item-custom,
+.item-custom > div,
+.item-custom > span {
+  float: left;
+}
+.item-custom,
+.item-custom > div {
+  margin-left: 10px;
+}
+
+.simpleCart_decrement { margin: 5px; }
+.cartarrow {
+  height: 20px;
+  width: 20px;
+}
+.item-name {
+  width: 50%;
+}
+
+.totalRow {
+  color:#333;
+  border-right:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  border-left:1px solid #ccc;
+  padding: 10px;
+  background: #ededed;
+  background: -moz-linear-gradient(top,  #f7f7f7 0%, #ededed 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#ededed));
+  background: -webkit-linear-gradient(top,  #f7f7f7 0%,#ededed 100%);
+  background: -o-linear-gradient(top,  #f7f7f7 0%,#ededed 100%);
+  background: -ms-linear-gradient(top,  #f7f7f7 0%,#ededed 100%);
+  background: linear-gradient(top,  #f7f7f7 0%,#ededed 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ededed',GradientType=0 );
+}
+
+#cartEmpty{
+  float: left;
+  margin: 10px;
+}
+#cartCheckout{
+  float: right;
+  margin: 10px;
+}

@@ -28,4 +28,8 @@ object Storefront extends Controller {
     Ok(html.cart())
   }
 
+  def company = Action {
+    Ok(html.company())
+  }
+
 }

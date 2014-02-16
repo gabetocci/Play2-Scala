@@ -1,0 +1,110 @@
+@()
+
+@main("StealStation :: Find a Steal of a Deal!") {
+
+  <!-- Page Specific CSS and Javascript -->
+  <script src="@routes.Assets.at("js/jquery.ui.tabs.min.js")"></script>
+  <link type="text/css" rel="stylesheet" href="@routes.Assets.at("css/views/company.css")" />
+
+  <!-- responsive row -->
+  <div class="row-fluid">
+
+    <div class="gridWrapper span9">
+
+      <div id="tabs">
+        <ul>
+          <li><a href="#fragment-1"><span>About Us</span></a></li>
+          <li><a href="#fragment-2"><span>Bulk/Wholesale Discounts</span></a></li>
+          <li><a href="#fragment-3"><span>Return Policy</span></a></li>
+          <li><a href="#fragment-4"><span>Other Company Policies</span></a></li>
+        </ul>
+
+        <!-- About Us Tab -->
+        <div id="fragment-1">
+          <p>StealStation.com is an online e-commerce store with a variety of products ranging from health and beauty products, consumer electronics, and apparel. We provide our customers with the lowest prices, easiest shopping, and highest quality customer service in the industry.</p>
+          <p>We have built our company by serving our customers with individualized attention. We strive to make our customers have a satisfying and positive experience when doing business with us. Our commitment to sales quality and customer satisfaction is second to none. At StealStation.com, we value our customers and our sales and support teams are dedicated to making your experience with us a pleasant and lasting one.</p>
+          <div id="facilityPhoto">
+            <img src="@routes.Assets.at("img/aboutus.jpg")" alt="facility photo" />
+          </div>
+        </div>
+
+        <!-- Bulk/Wholesale Tab -->
+        <div id="fragment-2">
+          <p>If you are interested in purchasing a particular item in bulk, <a id="lnkEmail" href="mailto:customer.service&#64;stealstation.com">Contact Us</a> for bulk order discounted pricing. High ticket items may be entitled to receive discounts at lower minimum order quantites than lower ticket items. Please make sure you include the item, quantity, and shipping location in your email.</p>
+        </div>
+
+          <!-- Returns Tab -->
+        <div id="fragment-3">
+          <p>If, for any reason, you are not happy with your purchase, we offer a liberal money-back return policy. We want our customers to buy with the confidence of knowing that we will support you if there are any problems with your merchandise. At StealStation.com, our customers are our number priority and we are always attentive and accommodating to their needs.</p>
+        </div>
+
+          <!-- Policies Tab -->
+        <div id="fragment-4">
+          <p>Entering the Site will constitute your acceptance of these Terms and Conditions. If you do not agree to abide by these terms, please do not enter the Site.</p>
+
+          <h5>Copyright</h5>
+          <p>This Web site is subject to copyright protection to the fullest extent permitted by law. Users are responsible for complying with all applicable U.S. and international copyright laws, regulations, and restrictions.</p>
+
+          <h5>Trademarks</h5>
+          <p>All trademarks, service marks, and trade names featured are the property of their respective owners and protected under state, federal, and international laws.</p>
+
+          <h5>Disclaimer</h5>
+          <p>This website – http://www.StealStation.com (the "Site") is being made available to you free-of-charge. The terms "you", "your", and "yours" refer to anyone accessing, viewing, browsing, visiting or using the Site. The terms “StealStation.com,” "StealStation," "we," "us," and "our" refer to stealstation.com together with its affiliates and subsidiaries. We reserve the right to change the nature of this relationship at any time and to revise these Terms and Conditions from time to time as we see fit. As such, you should check these Terms and Conditions periodically. Changes will not apply to any orders we have already accepted unless the law requires. If you violate any of the terms of these Terms and Conditions you will have your access canceled and you may be permanently banned from accessing, viewing, browsing and using the Site. Your accessing, viewing, browsing and/or using the Site after we post changes to these Terms and Conditions constitutes your acceptance and agreement to those changes, whether or not you actually reviewed them. At the bottom of this page, we will notify you of the date these Terms and Conditions were last updated.</p>
+
+          <h5>Privacy</h5>
+          <p>The term "personally identifiable information" means information that you voluntarily provide to us and which personally identifies you, such as your name, phone number, physical address, and any other data or information that would allow someone to personally identify you.<br />
+            To make a purchase, we require you to supply us with personally identifiable information. If you supply us with personally identifiable information, you may later access, update, and modify any inaccuracies.<br />
+            Please note, we generally keep a copy of the previous personally identifiable information for our records. If you would like to review or change your personally identifiable information, you may do so at any time by accessing your account through the My Account link located at the top of each page.<br />
+            You may also choose not to provide personally identifiable information at the point of collection; however, you will not be able to purchase products.<br />
+            In some areas of the Sites, you may have the ability to post or publish personally identifiable information. You should take care and avoid posting or publishing personally identifiable information.</p>
+
+          <p>We collect personally identifiable information in order to supply you with the products or services you request,
+            process payment, communicate with you and comply with any requirements of law.</p>
+
+          <p>We do not sell or rent personally identifiable information to third parties.<br />
+            We may disclose personally identifiable information to our staff and to third parties involved in the completion of your transaction, the delivery of your order, and the analysis and support of your use of the Sites.<br />
+            We may disclose personally identifiable information to trusted third parties whom we engage to process your personally identifiable information for us.<br /><br />
+            We may disclose personally identifiable information if necessary to protect our legal rights, if the information relates to actual or threatened harmful conduct, or we have good faith belief that such action is necessary to (1) conform to the requirements of law or comply with governmental orders, court orders, or legal process served on us or (2) to protect and defend our property or other rights, the users of the Sites or the public.
+            We may disclose personally identifiable information with other companies and organizations for fraud and credit risk purposes.<br />
+            We will use commercially reasonable efforts to make you aware of the disclosure of your personally identifiable information contrary to the terms set forth in this Privacy and Security Policy – if, for example, we discover a security breach.</p>
+
+          <p>The term “non-personally identifiable information” means information that you voluntarily provide to us or which we collect electronically, but which does not personally identify you.<br />
+            To register for an account, we require you to supply us with your email address. Your email address does not personally identify you, but is a means for us to contact you. <br />
+            Please note, we generally keep a copy of your previous email address(es) for our records.<br />
+            You may also choose not to provide us with your email address; however, you will not be able to create an account or purchase products.<br />
+            Whenever you visit the Sites, non-personally identifiable information, such as navigational and clickstream data is automatically collected.<br />
+            As you browse, we may install cookies (tiny text files stored on your computer, which record your preferences) in your browser. Cookies cannot harm your computer and they do not contain any personally identifiable information. You must accept cookies to shop through the Sites.<br />
+            You can erase or block cookies from your computer if you want to (your help screen or manual should tell you how to do this), but the Sites may not work correctly or at all if you set your browser not to accept cookies.</p>
+
+          <p>We collect non-personally identifiable information in order to operate, develop and improve the Sites, their functionality and our products and services.<br />
+            We collect non-personally identifiable information in order to provide you with personalized recommendations for products advertised on or sold through the Sites.<br />
+            Non-personally identifiable information is collected in the aggregate to, among other things, determine the total number of users of the Sites, prepare utilization reports, diagnose and correct compatibility problems or other problems with the Sites and perform statistical analyses to enable us to build a higher quality, more useful online service.<br />
+            We also collect non-personally identifiable information to perform statistical analyses of user behavior and characteristics in order to measure interest in and use of the various aspects of the Sites. By supplementing our records, this information helps us learn things like user preferences, popular search categories, click-through rates, what kinds of offers users like to see and in general, how to improve the functionality and relevancy of the Sites.</p>
+
+          <p>We do not sell or rent non-personally identifiable information to third parties.<br />
+            We may disclose non-personally identifiable information to our staff and to third parties involved in the completion of your transaction, the delivery of your order, and the analysis and support of your use of the Sites.<br />
+            We may disclose non-personally identifiable information to trusted third parties whom we have engaged to process non-personally identifiable information for us.<br />
+            We may disclose non-personally identifiable information, if necessary, to protect our legal rights, if the information relates to actual or threatened harmful conduct, or we have good faith belief that such action is necessary to (1) conform to the requirements of law or comply with governmental orders, court orders, or legal process served on us, or (2) to protect and defend our property or other rights, the users of the Sites, or the public.<br />
+            We may disclose non-personally identifiable information to our affiliates and third parties in order to provide you with personalized recommendations for products advertised on or sold through the Sites.<br />
+
+          <h5>Third Party Advertising</h5>
+          <p>We may engage third party advertising companies to advertise products or services to you online. These companies may employ cookies and action tags (also known as single pixel gifs or web beacons) to measure advertising effectiveness. They may also use this technology to serve specialized or relevant advertising content and/or recommendations to you on the Sites or on a third party’s website.<br />
+            Any information that these third parties collect via cookies and action tags is completely anonymous and does not contain any personally identifiable information.</p>
+
+          <br />
+
+        </div>
+      </div>
+
+    </div><!-- /gridWrapper -->
+
+  </div><!-- /.row-fluid -->
+
+  <script>
+  $( "#tabs" ).tabs();
+  function select_tab(tabName){
+    $('#tabs').tabs('select', '#'+tabname);
+  }
+  </script>
+
+}

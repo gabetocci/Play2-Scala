@@ -16,3 +16,5 @@
   <input type="text" class="item_quantity" value="1" />
   <input type="button" class="item_add" value="add to cart" />
 </li>
+
+<script src="@routes.Assets.at("js/jquery.validate.min.js")" type="text/javascript"></script>

@@ -6,6 +6,7 @@ GET         /                                  controllers.Storefront.index
 GET         /catalog                           controllers.Storefront.catalog
 GET         /product/:id                       controllers.Storefront.product(id: Int)
 GET         /cart                              controllers.Storefront.cart
+GET         /company                           controllers.Storefront.company
 
 ### Administrative Actions
 GET         /admin                             controllers.Admin.index

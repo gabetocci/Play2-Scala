@@ -1,0 +1,40 @@
+------------------
+What you need to do is simply to create an action wrapper which will wrap every controller method you want to make secure. For example:
+
+class AuthenticatedRequest[A](val user: User, request: Request[A]) extends WrappedRequest[A](request)
+
+object Authenticated extends ActionBuilder[AuthenticatedRequest] with BaseRequest {
+  def invokeBlock[A](request: Request[A], block: (AuthenticatedRequest[A]) => Future[SimpleResult]) = {
+    request.session.get("id").map { id => // Get id from the cookie, you have to set this on your post registration & post signin code.
+      UserService.findUserById(id).map { user =>
+        block(new AuthenticatedRequest(user, request))
+      } getOrElse {
+        Future.successful(Results.Forbidden)
+      }
+    } getOrElse {
+      Future.successful(Results.Redirect(routes.SigninController.index))
+    }
+  }
+}
+
+Then in your controller class, use this for securing the action.
+
+def anySecuredAction() = Authenticated { request =>
+println(request.user)
+Ok
+}
+
+This will simply invoke anySecuredAction method's body if Authenticated succeed, otherwise it will redirect user to the signin page.
+
+--------------------
+<!-- Change UA-XXXXX-X to be your site's ID -->
+<script>
+var _gaq = [['_setAccount', 'UA-5082207-15'], ['_setDomainName', 'simplecartjs.org'], ['_trackPageview'], ['_trackPageLoadTime']];
+(function(d, t) {
+var g = d.createElement(t),
+s = d.getElementsByTagName(t)[0];
+g.async = true;
+g.src = '//www.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g, s);
+})(document, 'script');
+</script>

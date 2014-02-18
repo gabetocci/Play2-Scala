@@ -1,0 +1,39 @@
+------------------------------------
+# deploy
+G:\dev\tess>play clean compile stage
+ftp $\target\universal\stage
+$install.sh
+$bounce.sh
+------------------------------------
+
+# software installed
+yum list installed | less
+chkconfig -list | grep on
+
+# networking
+lsof -i -n -P
+netstat -ntulpa
+/etc/init.d/iptables restart
+
+# startup script
+/etc/rc.local
+
+# postgres
+service postgresql-9.3 restart
+/var/lib/pgsql/9.3/data/
+
+# git : http://git-scm.com/book/en/Git-on-the-Server-Setting-Up-the-Server
+ssh://toccig@stealstation.com:2022/home/toccig/tess.git
+gitsetup:
+gitbash: git clone from remote to local
+file explorer:add missing files to project (idea target etc)
+gitbash: add .
+intellij: change a file
+gitbash: git commit -m "initial commit"
+gitbash: git push origin
+intellij: VCS -> VCS Integration -> git
+
+#logs
+/var/logs/*
+
+It appears that you upgraded a bad IP route package, we have rolled it back to iproute-2.6.32-23.el6.x86_64.rpm

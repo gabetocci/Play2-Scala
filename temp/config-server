@@ -1,0 +1,44 @@
+# server configurations
+
+# sudo
+visduo add: /sbin/start, /sbin/stop
+
+# Apache proxy port 80 to port 9000:
+<VirtualHost *:80>
+  ProxyPreserveHost On
+  ServerName www.stealstation.com
+  ProxyPass  /excluded !
+  ProxyPass / http://127.0.0.1:9000/
+  ProxyPassReverse / http://127.0.0.1:9000/
+</VirtualHost>
+
+# pgsql
+developer psql: FO9jI6sz4N
+os: 3LEi9$6HcH#d
+
+useradd developer
+passwd developer
+
+service postgresql-9.3 restart
+/var/lib/pgsql/9.3/data/
+
+CREATE DATABASE tesd
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'C'
+       LC_CTYPE = 'C'
+       TEMPLATE = template0
+       CONNECTION LIMIT = -1;
+
+create user developer with password 'password;
+grant all privileges on database tesd to developer;
+
+vi /var/lib/pgsql/9.3/data/pg_hba.conf
+host    tesd            developer       0.0.0.0/0               password
+
+vi /var/lib/pgsql/9.3/data/postgresql.conf
+listen_addresses='*'
+
+cat /var/lib/pgsql/9.3/data/pg_log/*.log
+

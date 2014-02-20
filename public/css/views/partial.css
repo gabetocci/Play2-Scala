@@ -255,7 +255,6 @@ a#login-link:hover {
   color: #FFF;
   text-align:center;
   text-shadow:1px 1px 1px rgba(0,0,0,.5);
-
 }
 #popOverCheckoutButton:hover{
   background-color:#ba3333;
@@ -275,6 +274,37 @@ a#login-link:hover {
   text-decoration: none;
 }
 
+/********************************
+	Departments Menu
+********************************/
+.dropdown-menu {
+  top: 105px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.popover {
+  width: 400px;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  overflow: hidden;
+}
+.popover-content {
+  text-align: center;
+  background-color: white;
+  height: 212px;
+  max-width: 250px;
+}
+a.maintainHover {
+  color: white;
+  background-color: #0081C2;
+}
 
 /************************************************************************
  * footer

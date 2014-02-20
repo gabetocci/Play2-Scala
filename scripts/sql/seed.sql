@@ -61,17 +61,17 @@ values ('ACTIVE', 'Competitive Edge Labs (CEL)');
 insert into brand ( type, name )
 values ('ACTIVE', 'Recomp Performance Nutrition (RPN)');
 
-insert into productcategory ( type, name, description )
-values ('ACTIVE', 'Cycle Support','Maintain healthy hormone balances, boost immunity, and helps organs fight off some of the toxic effects from using Prohormone’s or any other synthetic muscle building compounds.');
-insert into productcategory ( type, name, description )
-values ('ACTIVE', 'Prohormones','Prohormones are hormone precursors, synthetically produced compounds that are converted to anabolic hormones via liver enzymes once they are introduced to the body that raise the levels of the male hormones testosterone and 19-nortestosterone. They contain metabolic precursors that your body transforms into the active hormones.');
+insert into productcategory ( type, url, name, description )
+values ('ACTIVE', 'Cycle Support', 'cycle-support', 'Maintain healthy hormone balances, boost immunity, and helps organs fight off some of the toxic effects from using Prohormone’s or any other synthetic muscle building compounds.');
+insert into productcategory ( type, url, name, description )
+values ('ACTIVE','prohormones','Prohormones','Prohormones are hormone precursors, synthetically produced compounds that are converted to anabolic hormones via liver enzymes once they are introduced to the body that raise the levels of the male hormones testosterone and 19-nortestosterone. They contain metabolic precursors that your body transforms into the active hormones.');
 
-insert into productsku ( type, productcategoryid, brandid, name, description )
-values ('ACTIVE',1,1,'Cycle Assist','Cycle Assist is designed to be an all-in-one support solution for basic on cycle and post cycle therapy needs. Cycle Assist contains a combination of specifically dosed ingredients designed to help provide liver, blood pressure, cholesterol, prostate, and acne support.');
-insert into productsku ( type, productcategoryid, brandid, name, description )
-values ('ACTIVE',1,1,'PCT Assist','PCT Assist is designed to help increase natural testosterone levels during the period of Post Cycle Therapy (PCT) or as part of a natural testosterone enhancement regimen.');
-insert into productsku ( type, productcategoryid, brandid, name, description )
-values ('ACTIVE',2,2,'Havoc','Being completely non-estrogenic, Havoc offers an ideal composition to maximize strength and lean mass gains, with minimal side effects such as lethargy or gyno. RPN Havoc supplement embodies the most recent in a long, distinguished line of hormonal products designed to optimize the bodys ability to maximize muscular hypertrophy.');
+insert into productsku ( type, url, productcategoryid, brandid, name, description )
+values ('ACTIVE','competitive-edge-labs-cycle-assist',1,1,'Cycle Assist','Cycle Assist is designed to be an all-in-one support solution for basic on cycle and post cycle therapy needs. Cycle Assist contains a combination of specifically dosed ingredients designed to help provide liver, blood pressure, cholesterol, prostate, and acne support.');
+insert into productsku ( type, url, productcategoryid, brandid, name, description )
+values ('ACTIVE','competitive-edge-labs-pct-assist',1,1,'PCT Assist','PCT Assist is designed to help increase natural testosterone levels during the period of Post Cycle Therapy (PCT) or as part of a natural testosterone enhancement regimen.');
+insert into productsku ( type, url, productcategoryid, brandid, name, description )
+values ('ACTIVE','recomp-performance-nutrition-havoc',2,2,'Havoc','Being completely non-estrogenic, Havoc offers an ideal composition to maximize strength and lean mass gains, with minimal side effects such as lethargy or gyno. RPN Havoc supplement embodies the most recent in a long, distinguished line of hormonal products designed to optimize the bodys ability to maximize muscular hypertrophy.');
 
 insert into skuprice ( type, skuid, price )
 values ('ACTIVE',1,24.95);

@@ -216,6 +216,7 @@ DROP TABLE IF EXISTS ProductCategory CASCADE;
 CREATE TABLE ProductCategory (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
+  Url              varchar(100)    NOT NULL UNIQUE,
   Name             varchar(50),
   Description      text,
   Comment          text,
@@ -226,7 +227,7 @@ DROP TABLE IF EXISTS Brand CASCADE;
 CREATE TABLE Brand (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
-  Name        varchar(50),
+  Name             varchar(50),
   EntityId         int             REFERENCES Entity(Id),
   Comment          text,
   TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP
@@ -236,6 +237,7 @@ DROP TABLE IF EXISTS ProductSku CASCADE;
 CREATE TABLE ProductSku (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
+  Url              varchar(100)    NOT NULL UNIQUE,
   ProductCategoryId int            REFERENCES ProductCategory(Id),
   BrandId          int             REFERENCES Brand(Id),
   Name             varchar(50),

@@ -165,11 +165,9 @@ a#login-link:hover {
   background: linear-gradient(top,  #45484a 0%,#2a2b2c 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484a', endColorstr='#2a2b2c',GradientType=0 ); /* IE6-9 */
 }
-
 .simpleCart_items > table {
   width: 300px;
 }
-
 #triangle{
   position: absolute;
   left: 50%;
@@ -182,7 +180,6 @@ a#login-link:hover {
   -moz-transform: scale(1.2,.8) translateY(1.5px);
   transform: scale(1.2,.8) translateY(1.5px);
 }
-
 #cartPopover .itemRow{
   border-bottom:1px solid #2B2D2E;
   border-top:1px solid #434547;
@@ -220,7 +217,6 @@ a#login-link:hover {
 #cartPopover .item-name {
   width: 50%;
 }
-
 #cartData{
   background:#232425;
   padding:10px;
@@ -275,10 +271,11 @@ a#login-link:hover {
 }
 
 /********************************
-	Departments Menu
+	Departments Menu/Popover
 ********************************/
 .dropdown-menu {
   top: 105px;
+  padding: 15px;
   -webkit-border-top-right-radius: 0px;
   -webkit-border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
@@ -301,9 +298,33 @@ a#login-link:hover {
   height: 212px;
   max-width: 250px;
 }
+.dropdown-menu > li {
+  padding-bottom: 3px;
+}
+.dropdown-menu > li > a {
+  line-height: normal;
+  padding: inherit;
+}
+.dropdown-menu > li > a:hover {
+  color: #CA3C3C;
+  text-decoration: underline;
+  background-color: #FFF;
+  background-image: linear-gradient(to bottom, #FFF, #FFF);
+}
 a.maintainHover {
-  color: white;
-  background-color: #0081C2;
+  font-weight: bold;
+  color: #CA3C3C;
+  text-decoration: underline;
+}
+.link-description {
+  font-size: 11px;
+  font-weight: normal;
+  color: #999;
+  padding-left: 3px;
+  line-height: 10px;
+}
+.link-description:hover {
+  text-decoration: none;
 }
 
 /************************************************************************

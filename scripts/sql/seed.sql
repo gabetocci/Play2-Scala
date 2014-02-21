@@ -61,17 +61,73 @@ values ('ACTIVE', 'Competitive Edge Labs (CEL)');
 insert into brand ( type, name )
 values ('ACTIVE', 'Recomp Performance Nutrition (RPN)');
 
-insert into productcategory ( type, url, name, description )
-values ('ACTIVE', 'Cycle Support', 'cycle-support', 'Maintain healthy hormone balances, boost immunity, and helps organs fight off some of the toxic effects from using Prohormone’s or any other synthetic muscle building compounds.');
-insert into productcategory ( type, url, name, description )
-values ('ACTIVE','prohormones','Prohormones','Prohormones are hormone precursors, synthetically produced compounds that are converted to anabolic hormones via liver enzymes once they are introduced to the body that raise the levels of the male hormones testosterone and 19-nortestosterone. They contain metabolic precursors that your body transforms into the active hormones.');
+-- top level categories
+insert into category ( type, url, name, description )
+values ('ACTIVE',
+        'product-categories',
+        'Product Categories',
+        'See All Of Our Product Categories');
+insert into category ( type, url, name, description )
+values ('ACTIVE',
+        'fitness-goals',
+        'Fitness Goals',
+        'What Are Your Fitness Goals?');
+insert into category ( type, url, name, description )
+values ('ACTIVE',
+        'product-ingredients',
+        'Product Ingredients',
+        'Find Supplements With A Specific Ingredient');
+insert into category ( type, url, name, description )
+values ('ACTIVE',
+        'popular-supplements',
+        'Most Popular',
+        'See What Everyone Else Is Taking');
+insert into category ( type, url, name, description )
+values ('ACTIVE',
+        'sale-promotion',
+        'Sales and Promotions',
+        'Check Out Our Current Promotions');
 
-insert into productsku ( type, url, productcategoryid, brandid, name, description )
-values ('ACTIVE','competitive-edge-labs-cycle-assist',1,1,'Cycle Assist','Cycle Assist is designed to be an all-in-one support solution for basic on cycle and post cycle therapy needs. Cycle Assist contains a combination of specifically dosed ingredients designed to help provide liver, blood pressure, cholesterol, prostate, and acne support.');
-insert into productsku ( type, url, productcategoryid, brandid, name, description )
-values ('ACTIVE','competitive-edge-labs-pct-assist',1,1,'PCT Assist','PCT Assist is designed to help increase natural testosterone levels during the period of Post Cycle Therapy (PCT) or as part of a natural testosterone enhancement regimen.');
-insert into productsku ( type, url, productcategoryid, brandid, name, description )
-values ('ACTIVE','recomp-performance-nutrition-havoc',2,2,'Havoc','Being completely non-estrogenic, Havoc offers an ideal composition to maximize strength and lean mass gains, with minimal side effects such as lethargy or gyno. RPN Havoc supplement embodies the most recent in a long, distinguished line of hormonal products designed to optimize the bodys ability to maximize muscular hypertrophy.');
+-- categories
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'prohormones',
+        'ProHormones',
+        'Hard To Find Hardcore Prohomones',
+        1);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'cycle-support',
+        'Cycle Support',
+        'Pre-On-Post Cycle Support Products',
+        1);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'preworkout',
+        'Pre Workout',
+        'Get Amped For Your Workout',
+        1);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'fat-burners',
+        'Fat Burning',
+        'Industry Leading Thermogenics Will Get You Cut',
+        1);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'male-enhancement',
+        'Male Enhancement',
+        'Get Your Swag On In The Bedroom',
+        1);
+
+
+
+insert into sku ( type, url, brandid, name, description )
+values ('ACTIVE','competitive-edge-labs-cycle-assist',1,'Cycle Assist','Cycle Assist is designed to be an all-in-one support solution for basic on cycle and post cycle therapy needs. Cycle Assist contains a combination of specifically dosed ingredients designed to help provide liver, blood pressure, cholesterol, prostate, and acne support.');
+insert into sku ( type, url, brandid, name, description )
+values ('ACTIVE','competitive-edge-labs-pct-assist',1,'PCT Assist','PCT Assist is designed to help increase natural testosterone levels during the period of Post Cycle Therapy (PCT) or as part of a natural testosterone enhancement regimen.');
+insert into sku ( type, url, brandid, name, description )
+values ('ACTIVE','recomp-performance-nutrition-havoc',2,'Havoc','Being completely non-estrogenic, Havoc offers an ideal composition to maximize strength and lean mass gains, with minimal side effects such as lethargy or gyno. RPN Havoc supplement embodies the most recent in a long, distinguished line of hormonal products designed to optimize the bodys ability to maximize muscular hypertrophy.');
 
 insert into skuprice ( type, skuid, price )
 values ('ACTIVE',1,24.95);
@@ -88,8 +144,8 @@ values ('MSRP',3,69.99);
 commit;
 
 select * from brand;
-select * from ProductCategory;
-select * from ProductSku;
+select * from Category;
+select * from Sku;
 select * from SkuPrice;
 
 

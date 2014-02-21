@@ -212,13 +212,14 @@ CREATE TABLE Transaction (
 -- Inventory
 --
 
-DROP TABLE IF EXISTS ProductCategory CASCADE;
-CREATE TABLE ProductCategory (
+DROP TABLE IF EXISTS Category CASCADE;
+CREATE TABLE Category (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
   Url              varchar(100)    NOT NULL UNIQUE,
   Name             varchar(50),
   Description      text,
+  ParentCategory   int,
   Comment          text,
   TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP
 );
@@ -233,12 +234,11 @@ CREATE TABLE Brand (
   TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP
 );
 
-DROP TABLE IF EXISTS ProductSku CASCADE;
-CREATE TABLE ProductSku (
+DROP TABLE IF EXISTS Sku CASCADE;
+CREATE TABLE Sku (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
   Url              varchar(100)    NOT NULL UNIQUE,
-  ProductCategoryId int            REFERENCES ProductCategory(Id),
   BrandId          int             REFERENCES Brand(Id),
   Name             varchar(50),
   Description      text,
@@ -249,11 +249,21 @@ CREATE TABLE ProductSku (
   TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP
 );
 
+DROP TABLE IF EXISTS SkuCategory CASCADE;
+CREATE TABLE SkuCategory (
+  Id               serial          PRIMARY KEY,
+  Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
+  SkuId            int             REFERENCES Sku(Id),
+  CategoryId       int             REFERENCES Category(Id),
+  Comment          text,
+  TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP
+);
+
 DROP TABLE IF EXISTS SkuAttribute CASCADE;
 CREATE TABLE SkuAttribute (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
-  SkuId            int             NOT NULL REFERENCES ProductSku(Id),
+  SkuId            int             NOT NULL REFERENCES Sku(Id),
   AttributeKey     varchar(20),
   AttributeValue   varchar(40),
   Comment          text,
@@ -264,7 +274,7 @@ DROP TABLE IF EXISTS SkuCost CASCADE;
 CREATE TABLE SkuCost (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
-  SkuId            int             NOT NULL REFERENCES ProductSku(Id),
+  SkuId            int             NOT NULL REFERENCES Sku(Id),
   Cost             numeric,
   StartDate        timestamp,
   EndDate          timestamp,
@@ -276,7 +286,7 @@ DROP TABLE IF EXISTS SkuImage CASCADE;
 CREATE TABLE SkuImage (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
-  SkuId            int             NOT NULL REFERENCES ProductSku(Id),
+  SkuId            int             NOT NULL REFERENCES Sku(Id),
   Filename         varchar(50),
   Comment          text,
   TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP
@@ -286,7 +296,7 @@ DROP TABLE IF EXISTS SkuLocation CASCADE;
 CREATE TABLE SkuLocation (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
-  SkuId            int             NOT NULL REFERENCES ProductSku(Id),
+  SkuId            int             NOT NULL REFERENCES Sku(Id),
   FacilityId       int,
   LocationId       int,
   Shelf            varchar(50),
@@ -299,7 +309,7 @@ DROP TABLE IF EXISTS SkuPrice CASCADE;
 CREATE TABLE SkuPrice (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
-  SkuId            int             NOT NULL REFERENCES ProductSku(Id),
+  SkuId            int             NOT NULL REFERENCES Sku(Id),
   Price            numeric,
   StartDate        timestamp,
   EndDate          timestamp,
@@ -311,7 +321,7 @@ DROP TABLE IF EXISTS SkuReview CASCADE;
 CREATE TABLE SkuReview (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
-  SkuId            int             NOT NULL REFERENCES ProductSku(Id),
+  SkuId            int             NOT NULL REFERENCES Sku(Id),
   EntityId         int             NOT NULL REFERENCES Entity(Id),
   ReviewDate       timestamp,
   Rating           int,
@@ -355,7 +365,7 @@ CREATE TABLE OrderLineItem (
   TimeStamp timestamp DEFAULT CURRENT_TIMESTAMP
   PRIMARY KEY (Id),
   CONSTRAINT fk_OrderLineItem_CustomerOrder FOREIGN KEY (OrderId) REFERENCES CustomerOrder (Id) ON DELETE NO ACTION,
-  CONSTRAINT fk_OrderLineItem_Sku FOREIGN KEY (SkuId) REFERENCES ProductSku (Id) ON DELETE NO ACTION
+  CONSTRAINT fk_OrderLineItem_Sku FOREIGN KEY (SkuId) REFERENCES Sku (Id) ON DELETE NO ACTION
 );
 
 --
@@ -424,7 +434,7 @@ CREATE TABLE SpecialOffer (
   MaxQty int,
   ModifiedDate timestamp NOT NULL
   PRIMARY KEY (Id),
-  CONSTRAINT fk_SpecialOffer_Sku FOREIGN KEY (SkuId) REFERENCES Inventory.ProductSku (Id) ON DELETE NO ACTION
+  CONSTRAINT fk_SpecialOffer_Sku FOREIGN KEY (SkuId) REFERENCES Inventory.Sku (Id) ON DELETE NO ACTION
 );
 
  COMMENT=Record type validation table

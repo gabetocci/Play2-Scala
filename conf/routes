@@ -4,11 +4,21 @@
 ### Webuser Actions
 GET         /                                  controllers.Storefront.index
 GET         /sitemap.xml                       controllers.System.sitemap
+GET         /company                           controllers.Storefront.company
 
 GET         /catalog                           controllers.Storefront.catalog
 GET         /cart                              controllers.Storefront.cart
-GET         /company                           controllers.Storefront.company
+
+GET         /product-categories                controllers.Storefront.catalog
+GET         /fitness-goals                     controllers.Storefront.cart
+GET         /product-ingredients               controllers.Storefront.cart
+GET         /popular-products                  controllers.Storefront.cart
+GET         /product-brands                    controllers.Storefront.cart
+GET         /sale-products                     controllers.Storefront.cart
+
+GET         /category/:name                    controllers.Storefront.matching(name: String)
 GET         /product/:id                       controllers.Storefront.product(id: Int)
+
 
 GET         /:url                              controllers.Storefront.url(url: String)
 

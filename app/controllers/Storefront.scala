@@ -18,6 +18,12 @@ object Storefront extends Controller {
     Ok(html.catalog(Product.all, "All Products"))
   }
 
+  def matching(name: String) = Action {
+    Ok(html.catalog(Product.matching(name), "All Products"))
+  }
+
+
+
   def url(url: String) = Action {
     Product.one(url).map { product =>
       Ok(html.product(product))

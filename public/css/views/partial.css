@@ -319,8 +319,8 @@ a#login-link:hover {
   }
 
 .popover {
-  width: 500px;
-  max-width: 500px;
+  width: 510px;
+  max-width: 510px;
   -webkit-border-top-left-radius: 0px;
   -webkit-border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;

@@ -136,19 +136,19 @@
 .gv_panelNavNext {
 	position: absolute;
 	display: none;
-	opacity: 0.50;
-	-moz-opacity: 0.50;
-	-khtml-opacity: 0.50;
-	filter:alpha(opacity=50);
+  opacity: 0.7;
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  filter:alpha(opacity=70);
 	z-index: 200;
 }
 
 .gv_panelNavPrev:hover,
 .gv_panelNavNext:hover {
-	opacity: 0.9;
-	-moz-opacity: 0.9;
-	-khtml-opacity: 0.9;
-	filter:alpha(opacity=90);
+	opacity: 1;
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	filter:alpha(opacity=100);
 }
 
 .gv_navPlay {
@@ -176,14 +176,14 @@
 	background: url(themes/light/prev.png) top right no-repeat;
 }
 .gv_panelNavNext {
-	height: 20px;
-	width: 20px;
+	height: 37px;
+	width: 25px;
 	cursor: pointer;
-	background: url(themes/light/panel-next.png) top left no-repeat;
+	background: url(themes/light/right_over.png) top left no-repeat;
 }
 .gv_panelNavPrev {
-	height: 20px;
-	width: 20px;
+	height: 37px;
+	width: 25px;
 	cursor: pointer;
-	background: url(themes/light/panel-prev.png) top right no-repeat;
+	background: url(themes/light/left_over.png) top right no-repeat;
 }

@@ -88,7 +88,7 @@ a#login-link:hover {
     }
     #search-textbox{
       margin-left: 5px;
-      width: 300px;
+      width: 400px;
     }
     #search-button{
       padding: 4px 6px 5px 6px;
@@ -284,61 +284,73 @@ a#login-link:hover {
   -moz-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
+  .dropdown-menu > li {
+    padding-bottom: 3px;
+  }
+  .dropdown-menu > li > a,
+  .submenu-link  {
+    color: #08C;
+    padding: inherit;
+  }
+  .dropdown-menu > li > a:hover,
+  .submenu-link:hover {
+    color: #CA3C3C;
+    text-decoration: underline;
+    font-weight: bold;
+    background-image: none;
+    background-color: #ffffff;
+    filter: none;
+  }
+  a.maintainHover {
+    font-weight: bold;
+    text-decoration: underline;
+    background-image: none;
+    background-color: #ffffff;
+  }
+  .link-description {
+    font-size: 11px;
+    font-weight: normal;
+    color: #999;
+    padding-left: 3px;
+    line-height: 10px;
+  }
+  .link-description:hover {
+    text-decoration: none;
+  }
+
 .popover {
-  width: 400px;
+  width: 500px;
+  max-width: 500px;
   -webkit-border-top-left-radius: 0px;
   -webkit-border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   overflow: hidden;
 }
-.popover-title > a {
-  font-size: 14px;
-}
-.popover-content {
-  text-align: left;
-  font-size: 12px;
-  background-color: white;
-  height: 212px;
-  max-width: 300px;
-}
-.popover-content > p > a {
-  color: #000;
-  font-weight: normal;
-  text-decoration: none;
-}
-.popover-content > p > a:hover {
+  .popover-title > a {
+    font-size: 14px;
+    font-weight: normal;
+  }
+.popover-title > a:hover {
   color: #CA3C3C;
-  text-decoration: underline;
-}
-.dropdown-menu > li {
-  padding-bottom: 3px;
-}
-.dropdown-menu > li > a {
-  line-height: normal;
-  padding: inherit;
-}
-.dropdown-menu > li > a:hover {
-  color: #CA3C3C;
-  text-decoration: underline;
-  background-color: #FFF;
-  background-image: linear-gradient(to bottom, #FFF, #FFF);
-}
-a.maintainHover {
-  /*font-weight: bold;*/
-  /*color: #CA3C3C;*/
-  text-decoration: underline;
-}
-.link-description {
-  font-size: 11px;
-  font-weight: normal;
-  color: #999;
-  padding-left: 3px;
-  line-height: 10px;
-}
-.link-description:hover {
-  text-decoration: none;
-}
+ }
+  .popover-content {
+    text-align: left;
+    font-size: 12px;
+    background-color: white;
+    height: 212px;
+    max-width: 300px;
+  }
+  .popover-content > p > a {
+    color: #000;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  .popover-content > p > a:hover {
+    color: #CA3C3C;
+    text-decoration: underline;
+  }
+
 
 /************************************************************************
  * footer

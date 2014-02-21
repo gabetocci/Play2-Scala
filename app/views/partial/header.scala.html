@@ -64,6 +64,8 @@
   <!-- nav menu -->
   <div id="nav-menu">
 
+    <!-- departments menu -->
+
     <div id="department-menu">
       <a class="dropdown-toggle" href="#" data-toggle="dropdown">
         <img src="@routes.Assets.at("img/department-menu.png")" alt="Departments Menu Button" />
@@ -71,49 +73,117 @@
 
       <ul class="dropdown-menu" role="menu">
 
-        <li data-submenu-id="supplements-submenu">
-          <a href="#" class="submenu-link">Supplements</a>
-          <div class="link-description"></div>
-
-          <div id="supplements-submenu" class="popover">
+        <li data-submenu-id="category-submenu">
+          <a href="#" class="submenu-link">Product Categories</a>
+          <div class="link-description">We Offer a Variety of Categories</div>
+          <div id="category-submenu" class="popover">
             <h3 class="popover-title">
-              <a href="/supplements">Supplements</a><br />
-              <div class="link-description">This is a short description</div>
+              <a href="/categories">View All Supplement Categories</a><br />
+              <div class="link-description">Supplement Categories</div>
             </h3>
-
             <div class="popover-content">
-              <p>Content One Goes Here</p>
-              <p>Content One Goes Here</p>
-              <p>Content One Goes Here</p>
+              <p><a href="/shop-products-by-category/prohormones">Prohormones</a></p>
+              <p><a href="/shop-products-by-category/cycle-support">Cycle Support</a></p>
+              <p><a href="/shop-products-by-category/preworkout">PreWorkout</a></p>
+              <p><a href="/shop-products-by-category/fat-burners">Fat Burners</a></p>
+              <p><a href="/shop-products-by-category/male-enhancement">Male Enhancement</a></p>
             </div>
           </div>
-
         </li>
 
-        <li data-submenu-id="apparel-submenu">
-          <a href="#" class="submenu-link">Apparel</a>
-          <div class="link-description">Short blurb about apparel</div>
-
-          <div id="apparel-submenu" class="popover">
+        <li data-submenu-id="goal-submenu">
+          <a href="#" class="submenu-link">Fitness Goal</a>
+          <div class="link-description">Whats your fitness goal?</div>
+          <div id="goal-submenu" class="popover">
             <h3 class="popover-title">
-              <a href="/apparel">Apparel</a><br />
-              <div class="link-description">Apparel description here</div>
+              <a href="/shop-products-by-goal">View All Fitness Goal Categories</a><br />
+              <div class="link-description">Shop by Fitness Goal</div>
             </h3>
-
             <div class="popover-content">
-              <p>Content Two Goes Here</p>
-              <p>Content One Goes Here</p>
-              <p>Content One Goes Here</p>
-              <p>Content One Goes Here</p>
+              <p><a href="/shop-products-by-goal/bulk-muscle">Add Bulk Muscle</a></p>
+              <p><a href="/shop-products-by-goal/lean-muscle">Build Lean Muscle</a></p>
+              <p><a href="/shop-products-by-goal/burn-fat">Burn Fat</a></p>
+              <p><a href="/shop-products-by-goal/increase-energy">Increase Energy</a></p>
+              <p><a href="/shop-products-by-goal/increase-libido">Increase Libido</a></p>
+              <p><a href="/shop-products-by-goal/improve-mental">Improve Mental Focus</a></p>
             </div>
           </div>
+        </li>
 
+        <li data-submenu-id="ingredients-submenu">
+          <a href="#" class="submenu-link">Ingredients</a>
+          <div class="link-description">Supplements with a specific ingredient</div>
+          <div id="ingredients-submenu" class="popover">
+            <h3 class="popover-title">
+              <a href="/shop-by-ingredients">View All Ingredients</a><br />
+              <div class="link-description">Find Supplements with a Specific Ingredient</div>
+            </h3>
+            <div class="popover-content">
+              <p><a href="/shop-products-by-ingredient/protein">Protein Supplements</a></p>
+              <p><a href="/shop-products-by-ingredient/creatine">Creatine</a></p>
+              <p><a href="/shop-products-by-ingredient/nitrous-oxide">Nitrous Oxide (NO2)</a></p>
+              <p><a href="/shop-products-by-ingredient/caffeine">Caffeine</a></p>
+              <p><a href="/shop-products-by-ingredient/daa">D-Aspartic Acid (DAA)</a></p>
+            </div>
+          </div>
+        </li>
+
+        <li data-submenu-id="mostpopular-submenu">
+          <a href="#" class="submenu-link">Most Popular</a>
+          <div class="link-description">See what everyone else is taking</div>
+          <div id="mostpopular-submenu" class="popover">
+            <h3 class="popover-title">
+              <a href="/most-popular">View All The Most Popular Supplements</a><br />
+              <div class="link-description">See what everyone else is taking</div>
+            </h3>
+            <div class="popover-content">
+              <p><a href="/competitive-edge-labs/cycle-assist">Cycle Assist by Competitive Edge Labs (CEL)</a></p>
+              <p><a href="/recomp-performance-nutrition/havpc">Havoc by Recomp Performance Nutrition (RPN)</a></p>
+              <p><a href="/blackstone-labs/growth">Growth by BlackStone Labs</a></p>
+              <p><a href="/serious-nutrition-solutions/piracetam">Piracetam by Serious Nutrition Solutions (SNS)</a></p>
+              <p><a href="/leading-edge-herbal/vigrx-plus">Vigrx Plus by Leading Edge Herbal</a></p>
+            </div>
+          </div>
+        </li>
+
+        <li data-submenu-id="brands-submenu">
+          <a href="#" class="submenu-link">Brands</a>
+          <div class="link-description">Find your favorite brand</div>
+          <div id="brands-submenu" class="popover">
+            <h3 class="popover-title">
+              <a href="/brands">See All Availible Brands</a><br />
+              <div class="link-description">Shop by Brand</div>
+            </h3>
+            <div class="popover-content">
+              <p><a href="/shop-products-by-brand/competitive-edge-labs">Competitive Edge Labs (CEL)</a></p>
+              <p><a href="/shop-products-by-brand/recomp-performance-nutrition">Recomp Performance Nutrition (RPN)</a></p>
+              <p><a href="/shop-products-by-brand/blackstone-labs">BlackStone Labs</a></p>
+              <p><a href="/shop-products-by-brand/serious-nutrition-solutions">Serious Nutrition Solutions (SNS)</a></p>
+              <p><a href="/shop-products-by-brand/leading-edge-herbal">Leading Edge Herbal</a></p>
+            </div>
+          </div>
+        </li>
+
+        <li data-submenu-id="clearance-submenu">
+          <a href="#" class="submenu-link">Clearance Supplements</a>
+          <div class="link-description">Close Out Prices</div>
+          <div id="clearance-submenu" class="popover">
+            <h3 class="popover-title">
+              <a href="/clearance">View All Deeply Discounted Supplements</a><br />
+              <div class="link-description">High Quality Supplements at Close Out Prices</div>
+            </h3>
+            <div class="popover-content">
+              <p><a href="/competitive-edge-labs/pct-assist">PCT Assist by Competitive Edge Labs (CEL)</a></p>
+              <p><a href="/serious-nutrition-solutions/daa-caps">DAA Caps by Serious Nutrition Solutions (SNS)</a></p>
+              <p><a href="/leading-edge-herbal/semenax">Semenax by Leading Edge Herbal</a></p>
+            </div>
+          </div>
         </li>
 
       </ul>
+
     </div>
-
-
+    <!-- departments menu -->
 
     <div id="search-bar" class="float-left">
       <div id="search-label" class="float-left">Search</div>
@@ -127,7 +197,6 @@
 
   </div>
   <!-- /nav menu -->
-
 <!-- /header -->
 
 <!-- cartPopover -->

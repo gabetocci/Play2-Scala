@@ -3,11 +3,14 @@
 
 ### Webuser Actions
 GET         /                                  controllers.Storefront.index
+GET         /sitemap.xml                       controllers.System.sitemap
+
 GET         /catalog                           controllers.Storefront.catalog
 GET         /cart                              controllers.Storefront.cart
 GET         /company                           controllers.Storefront.company
-GET         /:url                              controllers.Storefront.url(url: String)
 GET         /product/:id                       controllers.Storefront.product(id: Int)
+
+GET         /:url                              controllers.Storefront.url(url: String)
 
 ### Administrative Actions
 GET         /admin                             controllers.Admin.index

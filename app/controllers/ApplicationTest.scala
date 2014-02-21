@@ -18,7 +18,7 @@ object ApplicationTest extends Controller {
   def testRequest = Action { request => 
     Logger.info("Testing System Logger")
     Ok("received request ok! " + request )
-  } 
+  }
 
   def testTodo = TODO //Redirect("/accounting")
 

@@ -292,11 +292,24 @@ a#login-link:hover {
   border-bottom-left-radius: 0px;
   overflow: hidden;
 }
+.popover-title > a {
+  font-size: 14px;
+}
 .popover-content {
-  text-align: center;
+  text-align: left;
+  font-size: 12px;
   background-color: white;
   height: 212px;
-  max-width: 250px;
+  max-width: 300px;
+}
+.popover-content > p > a {
+  color: #000;
+  font-weight: normal;
+  text-decoration: none;
+}
+.popover-content > p > a:hover {
+  color: #CA3C3C;
+  text-decoration: underline;
 }
 .dropdown-menu > li {
   padding-bottom: 3px;
@@ -312,8 +325,8 @@ a#login-link:hover {
   background-image: linear-gradient(to bottom, #FFF, #FFF);
 }
 a.maintainHover {
-  font-weight: bold;
-  color: #CA3C3C;
+  /*font-weight: bold;*/
+  /*color: #CA3C3C;*/
   text-decoration: underline;
 }
 .link-description {

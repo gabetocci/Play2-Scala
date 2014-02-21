@@ -5,10 +5,6 @@ import play.api.mvc._
 import views._
 import models._
 
-import anorm._
-import play.api.db._
-import anorm.SqlParser._
-
 object Storefront extends Controller {
 
   // TODO Move to Base Controller

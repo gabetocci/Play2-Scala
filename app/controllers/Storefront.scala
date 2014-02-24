@@ -10,6 +10,7 @@ object Storefront extends Controller {
   // TODO Move to Base Controller
   val Home = Redirect(routes.Storefront.index())
 
+
   def index = Action {
     Ok(html.index(Product.all, "Welcome to StealStation"))
   }
@@ -30,6 +31,12 @@ object Storefront extends Controller {
     }.getOrElse(
         Ok(html.catalog(Product.matching(url), url))
       )
+  }
+
+  def product(url: String) = Action {
+    Product.one(url).map { product =>
+      Ok(html.product(product))
+    }.getOrElse(Home)
   }
 
   def product(id: Int) = Action {

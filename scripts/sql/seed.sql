@@ -141,13 +141,22 @@ insert into skuprice ( type, skuid, price )
 values ('MSRP',2,49.99);
 insert into skuprice ( type, skuid, price )
 values ('MSRP',3,69.99);
+
+insert into skucategory (type, skuid, categoryid)
+values ('ACTIVE',1,7);
+insert into skucategory (type, skuid, categoryid)
+values ('ACTIVE',2,7);
+insert into skucategory (type, skuid, categoryid)
+values ('ACTIVE',3,6);
+
 commit;
 
-select * from brand;
-select * from Category;
-select * from Sku;
-select * from SkuPrice;
 
+select * from sku;
+select * from brand;
+select * from category;
+select * from SkuPrice;
+select * from skucategory;
 
 /*
 select * from ProductCategory;

@@ -1,10 +1,9 @@
-@(products: Seq[Product], message: String)
+@(categories: Seq[Category], message: String)
 
 @main("StealStation :: Find a Steal of a Deal!") {
 
   <!-- Page Specific CSS and Javascript -->
-  <script src="@routes.Assets.at("js/views/catalog.js")"></script>
-  <link type="text/css" rel="stylesheet" href="@routes.Assets.at("css/views/catalog.css")" />
+  <link type="text/css" rel="stylesheet" href="@routes.Assets.at("css/views/subCategories.css")" />
 
   <!-- responsive row -->
   <div class="row-fluid">
@@ -14,16 +13,15 @@
     <div class="gridWrapper span9">
 
       <ul class="productGrid">
-        @products.map {
-          case (product) => {
+        @categories.map {
+          case (category) => {
             <li>
-              <a href="/product/@product.url">
-                <img src="@routes.Assets.at("img/products/"+product.id+".png")" alt="@product.name" />
-                <div class="name">@product.name</div>
+              <a href="/category/@category.url">
+                <div class="name">@category.name</div>
               </a>
               <div class="priceContainer">
-                <div class="msrp">$@product.msrp</div>
-                <div class="price">$@product.price</div>
+                <div class="greyLabel">@category.description</div>
+                <div class="price">@category.url</div>
               </div>
             </li>
           }

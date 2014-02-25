@@ -60,7 +60,7 @@ object Product {
     }
   }
 
-  def matching(url: String): Seq[Product] = {
+  def category(url: String): Seq[Product] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
@@ -81,12 +81,14 @@ object Product {
             left outer join brand
                  on brand.id = sku.brandid
             left outer join skucategory
-                 on skucategory.id = sku.skucategoryid
-           where skucategory.url = {url}
-      """
+                 on skucategory.skuid = sku.id
+            join category
+              on category.id = skucategory.categoryid
+           where category.url = {url}
+        """
       ).on(
-        'url -> url
-      ).as(Product.simple *)
+          'url -> url
+        ).as(Product.simple *)
     }
   }
 
@@ -118,7 +120,7 @@ object Product {
     }
   }
 
-  def one(id: Int): Option[Product] = {
+  def search(searchTerms: String): Seq[Product] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
@@ -138,11 +140,12 @@ object Product {
                  and price.type = 'ACTIVE'
             left outer join brand
                  on brand.id = sku.brandid
-           where sku.id = {id}
+           where (upper(sku.name)        like upper('%{searchTerms}%') or
+                  upper(brand.name)      like upper('%{searchTerms}%'));
         """
       ).on(
-          'id -> id
-        ).as(Product.simple.singleOpt)
+          'searchTerms -> searchTerms
+        ).as(Product.simple *)
     }
   }
 
@@ -156,7 +159,7 @@ object Product {
   def create(product: Product): Product = {
     DB.withConnection { implicit connection =>
 
-    //TODO brand and cateogory name <> id
+    //TODO brand and category name <> id
 
       SQL(
         """

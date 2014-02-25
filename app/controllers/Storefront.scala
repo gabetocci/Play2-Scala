@@ -16,21 +16,7 @@ object Storefront extends Controller {
   }
 
   def catalog = Action {
-    Ok(html.catalog(Product.all, "All Products"))
-  }
-
-  def matching(name: String) = Action {
-    Ok(html.catalog(Product.matching(name), "All Products"))
-  }
-
-
-
-  def url(url: String) = Action {
-    Product.one(url).map { product =>
-      Ok(html.product(product))
-    }.getOrElse(
-        Ok(html.catalog(Product.matching(url), url))
-      )
+    Ok(html.catalog(Product.all, "Product Catalog"))
   }
 
   def product(url: String) = Action {
@@ -39,11 +25,36 @@ object Storefront extends Controller {
     }.getOrElse(Home)
   }
 
+  def subCategories(url: String) = Action {
+    val parent = Category.one(url).get
+    Ok(html.subCategories(
+        Category.subCategories(parent.id), parent.name
+      ))
+  }
+
+  def category(url: String) = Action {
+    Ok(html.catalog(Product.category(url), url))
+  }
+
+  def productSearch(searchTerms: String) = Action {
+    Ok(html.catalog(Product.search(searchTerms), "Search Results: "+searchTerms))
+  }
+
+
+/*
+  def url(url: String) = Action {
+    Product.one(url).map { product =>
+      Ok(html.product(product))
+    }.getOrElse(
+        Ok(html.catalog(Product.category(url), url))
+      )
+  }
+
   def product(id: Int) = Action {
     Product.one(id).map { product =>
       Ok(html.product(product))
     }.getOrElse(Home)
-  }
+  }*/
 
   def cart = Action {
     Ok(html.cart())

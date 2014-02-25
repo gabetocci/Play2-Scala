@@ -1,61 +1,62 @@
 ### Routes
 # This file defines all application routes (Higher priority routes first)
 
-### Webuser Actions
-GET         /                                      controllers.Storefront.index
-GET         /sitemap.xml                           controllers.System.sitemap
-GET         /company                               controllers.Storefront.company
+### Webuser Actions / Storefront
+GET         /                                  controllers.Storefront.index
+GET         /sitemap.xml                       controllers.System.sitemap
+GET         /company                           controllers.Storefront.company
+GET         /cart                              controllers.Storefront.cart
+GET         /catalog                           controllers.Storefront.catalog
 
-GET         /catalog                               controllers.Storefront.catalog
-GET         /popular-products                      controllers.Storefront.cart
-GET         /sale-products                         controllers.Storefront.cart
+GET         /popular-products                  controllers.Storefront.category(url = "popular-products")
+GET         /sale-products                     controllers.Storefront.category(url = "sale-products")
 
-GET         /cart                                  controllers.Storefront.cart
+GET         /product-categories                controllers.Storefront.subCategories(url = "product-categories")
+GET         /product-category/:url             controllers.Storefront.category(url: String)
 
-GET         /product-categories                    controllers.Storefront.catalog
-GET         /product-category/:category            controllers.Storefront.matching(category: String)
+GET         /fitness-goals                     controllers.Storefront.subCategories(url = "fitness-goals")
+GET         /fitness-goal/:url                 controllers.Storefront.category(url: String)
 
-GET         /fitness-goals                         controllers.Storefront.cart
-GET         /fitness-goal/:goal                    controllers.Storefront.cart
+GET         /product-ingredients               controllers.Storefront.subCategories(url = "product-ingredients")
+GET         /product-ingredient/:url           controllers.Storefront.category(url: String)
 
-GET         /product-ingredients                   controllers.Storefront.cart
-GET         /product-ingredient/:ingredient        controllers.Storefront.cart
+GET         /product-brands                    controllers.Storefront.cart
+GET         /product-brand/:url                controllers.Storefront.category(url: String)
 
-GET         /product-brands                        controllers.Storefront.cart
-GET         /product-brand/:brand                  controllers.Storefront.cart
+GET         /product/:url                      controllers.Storefront.product(url: String)
+POST        /product-search                    controllers.Storefront.productSearch(searchTerms: String)
 
-GET         /product/:id                           controllers.Storefront.product(id: Int)
-GET         /product/:id                           controllers.Storefront.product(url: String)
+# not sure what I'm going to do with this -> possibly search url strings
+#GET         /:url                              controllers.Storefront.url(url: String)
 
-GET         /:url                                  controllers.Storefront.url(url: String)
 
 ### Administrative Actions
-GET         /admin                                 controllers.Admin.index
+GET         /admin                             controllers.Admin.index
 
 # Accounting
-GET         /accounting/document/create            controllers.Accounting.createDocument
-POST        /accounting/document/submit            controllers.Accounting.submitDocument
-GET         /accounting/documents                  controllers.Accounting.documents
-GET         /accounting/accounts                   controllers.Accounting.accounts
-GET         /accounting/accounts/json              controllers.Accounting.accountsJs
-POST        /accounting/accounts                   controllers.Accounting.saveAccount
+GET         /accounting/document/create        controllers.Accounting.createDocument
+POST        /accounting/document/submit        controllers.Accounting.submitDocument
+GET         /accounting/documents              controllers.Accounting.documents
+GET         /accounting/accounts               controllers.Accounting.accounts
+GET         /accounting/accounts/json          controllers.Accounting.accountsJs
+POST        /accounting/accounts               controllers.Accounting.saveAccount
 
 #Admin
-GET         /system                                controllers.System.index
-GET         /system/recordtypes                    controllers.System.recordTypes
-POST        /system/recordtypes                    controllers.System.saveRecordType
-GET         /system/recordtypes/exists             controllers.System.recordTypeExists
+GET         /system                            controllers.System.index
+GET         /system/recordtypes                controllers.System.recordTypes
+POST        /system/recordtypes                controllers.System.saveRecordType
+GET         /system/recordtypes/exists         controllers.System.recordTypeExists
 
 ### Testing Pages
-GET         /test/1                                controllers.ApplicationTest.testRequest
-GET         /test/2                                controllers.ApplicationTest.testTodo
-GET         /test/3                                controllers.ApplicationTest.testSimpleResult
-GET         /test/4                                controllers.ApplicationTest.testXML
-GET         /test/5                                controllers.ApplicationTest.testCookie
-GET         /test/6                                controllers.ApplicationTest.testDatabase
-GET         /test/json1                            controllers.ApplicationTest.json1
-POST        /test/json2                            controllers.ApplicationTest.json2
-GET         /test/:id                              controllers.ApplicationTest.testParameter(id: Int)
+GET         /test/1                            controllers.ApplicationTest.testRequest
+GET         /test/2                            controllers.ApplicationTest.testTodo
+GET         /test/3                            controllers.ApplicationTest.testSimpleResult
+GET         /test/4                            controllers.ApplicationTest.testXML
+GET         /test/5                            controllers.ApplicationTest.testCookie
+GET         /test/6                            controllers.ApplicationTest.testDatabase
+GET         /test/json1                        controllers.ApplicationTest.json1
+POST        /test/json2                        controllers.ApplicationTest.json2
+GET         /test/:id                          controllers.ApplicationTest.testParameter(id: Int)
 
 ### Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file                          controllers.Assets.at(path="/public", file)
+GET         /assets/*file                      controllers.Assets.at(path="/public", file)

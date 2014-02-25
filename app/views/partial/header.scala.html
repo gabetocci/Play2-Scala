@@ -74,20 +74,20 @@
       <ul class="dropdown-menu" role="menu">
 
         <li data-submenu-id="category-submenu">
-          <a href="#" class="submenu-link">Product Categories</a>
+          <a href="/product-categories" class="submenu-link">Product Categories</a>
           <div class="link-description">See all of Our Product Categories</div>
 
           <div id="category-submenu" class="popover">
             <h3 class="popover-title">
-              <a href="/categories">Product Categories</a><br />
+              <a href="/product-categories">Product Categories</a><br />
               <div class="link-description">Supplement Categories</div>
             </h3>
             <div class="popover-content">
-              <p><a href="/shop-products-by-category/prohormones">Prohormones</a></p>
-              <p><a href="/shop-products-by-category/cycle-support">Cycle Support</a></p>
-              <p><a href="/shop-products-by-category/preworkout">PreWorkout</a></p>
-              <p><a href="/shop-products-by-category/fat-burners">Fat Burners</a></p>
-              <p><a href="/shop-products-by-category/male-enhancement">Male Enhancement</a></p>
+              <p><a href="/product-category/prohormones">Prohormones</a></p>
+              <p><a href="/product-category/cycle-support">Cycle Support</a></p>
+              <p><a href="/product-category/preworkout">PreWorkout</a></p>
+              <p><a href="/product-category/fat-burners">Fat Burners</a></p>
+              <p><a href="/product-category/male-enhancement">Male Enhancement</a></p>
             </div>
           </div>
         </li>
@@ -189,7 +189,9 @@
     <div id="search-bar" class="float-left">
       <div id="search-label" class="float-left">Search</div>
       <div class="float-left">
-        <input id="search-textbox" type="text" placeholder="Eg : Most popular product names here" autocomplete="off" />
+        <form>
+          <input id="search-textbox" type="text" name="searchTerms" placeholder="Eg : Most popular product names here" autocomplete="off" />
+        </form>
       </div>
       <div class="float-left">
         <input type="button" id="search-button" class="grey-button" value="Go" />

@@ -1,0 +1,24 @@
+
+/************************************************************************
+ * subCatagories view
+ ************************************************************************/
+.gridWrapper {
+  margin-left: 10px;
+}
+ul.productGrid {
+  margin: 0px;
+}
+ul.productGrid li {
+  width: 150px;
+  margin: 5px 10px 5px 0px;
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  *zoom: 1;
+}
+
+.greyLabel {
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+  color: rgb(102, 102, 102);
+  font-size: 13px;
+}

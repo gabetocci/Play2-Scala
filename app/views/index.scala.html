@@ -44,7 +44,7 @@
       @products.map {
         case (product) => {
           <li>
-            <a href="/@product.url">
+            <a href="/product/@product.url">
               <img src="@routes.Assets.at("img/products/"+product.id+".png")" alt="@product.name" />
               <div class="name">@product.name</div>
             </a>

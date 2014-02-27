@@ -140,7 +140,8 @@ object Product {
                  and price.type = 'ACTIVE'
             left outer join brand
                  on brand.id = sku.brandid
-           where upper(sku.name)        like upper('%{searchTerm}%');
+           where ((upper(sku.name)   like '%'||upper({searchTerm})||'%') or
+                  (upper(brand.name) like '%'||upper({searchTerm})||'%'))
         """
       ).on(
           'searchTerm -> searchTerm

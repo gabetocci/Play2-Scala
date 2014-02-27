@@ -120,7 +120,7 @@ object Product {
     }
   }
 
-  def search(searchTerms: String): Seq[Product] = {
+  def search(searchTerm: String): Seq[Product] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
@@ -140,11 +140,10 @@ object Product {
                  and price.type = 'ACTIVE'
             left outer join brand
                  on brand.id = sku.brandid
-           where (upper(sku.name)        like upper('%{searchTerms}%') or
-                  upper(brand.name)      like upper('%{searchTerms}%'));
+           where upper(sku.name)        like upper('%{searchTerm}%');
         """
       ).on(
-          'searchTerms -> searchTerms
+          'searchTerm -> searchTerm
         ).as(Product.simple *)
     }
   }

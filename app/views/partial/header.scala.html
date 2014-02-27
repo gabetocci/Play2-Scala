@@ -186,17 +186,17 @@
     </div>
     <!-- departments menu -->
 
-    <div id="search-bar" class="float-left">
-      <div id="search-label" class="float-left">Search</div>
-      <div class="float-left">
-        <form>
+    @helper.form(action = routes.Storefront.productSearch) {
+      <div id="search-bar" class="float-left">
+        <div id="search-label" class="float-left">Search</div>
+        <div class="float-left">
           <input id="search-textbox" type="text" name="searchTerms" placeholder="Eg : Most popular product names here" autocomplete="off" />
-        </form>
+        </div>
+        <div class="float-left">
+          <input type="submit" id="search-button" class="grey-button" value="Go" /> <!--type="button"-->
+        </div>
       </div>
-      <div class="float-left">
-        <input type="button" id="search-button" class="grey-button" value="Go" />
-      </div>
-    </div>
+    }
 
   </div>
   <!-- /nav menu -->

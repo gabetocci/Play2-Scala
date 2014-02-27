@@ -18,3 +18,28 @@
 </li>
 
 <script src="@routes.Assets.at("js/jquery.validate.min.js")" type="text/javascript"></script>
+
+
+  def productSearch = Action {
+
+    val documentForm = Form(
+      mapping(
+        "description" -> nonEmptyText,
+        "amountDue" -> number
+      )(Document.apply)(Document.unapply)
+    )
+
+    documentForm.bindFromRequest.fold(
+      formWithErrors => BadRequest(html.admin.document_create(formWithErrors)),
+      validDocument => {
+        Document.insert(validDocument)
+        Ok(html.admin.document_create(documentForm))
+          .flashing("success" -> "Purchase order %s has been created"
+          .format(validDocument.description))
+      }
+    )
+
+    val searchTerms = Form("searchTerms" -> text).get
+    Ok(searchTerms)
+    //Ok(html.catalog(Product.search(searchTerms), "Search Results: "+searchTerms))
+  }

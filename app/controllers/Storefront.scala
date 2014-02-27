@@ -1,6 +1,8 @@
 package controllers
 
 import play.api.mvc._
+import play.api.data._
+import play.api.data.Forms._
 
 import views._
 import models._
@@ -36,8 +38,11 @@ object Storefront extends Controller {
     Ok(html.catalog(Product.category(url), url))
   }
 
-  def productSearch(searchTerms: String) = Action {
-    Ok(html.catalog(Product.search(searchTerms), "Search Results: "+searchTerms))
+
+
+  def productSearch = Action { implicit request =>
+    val searchTerm = Form("searchTerms" -> text).bindFromRequest.get
+    Ok(html.catalog(Product.search(searchTerm), "Search Results: "+searchTerm))
   }
 
 

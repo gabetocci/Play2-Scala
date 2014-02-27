@@ -75,9 +75,6 @@ function partialViewMain (tess) {
     //replace search str in span value
     $("#nav-search-in-content").text(Search_Str);
   });
-  $("#search-button").click(function() {
-    window.location = "/catalog";
-  });
 
   // shopping cart
   $("#cart-anchor").click(function() {

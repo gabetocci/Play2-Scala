@@ -24,7 +24,7 @@ GET         /product-brands                    controllers.Storefront.cart
 GET         /product-brand/:url                controllers.Storefront.category(url: String)
 
 GET         /product/:url                      controllers.Storefront.product(url: String)
-POST        /product-search                    controllers.Storefront.productSearch(searchTerms: String)
+POST        /product-search                    controllers.Storefront.productSearch
 
 # not sure what I'm going to do with this -> possibly search url strings
 #GET         /:url                              controllers.Storefront.url(url: String)

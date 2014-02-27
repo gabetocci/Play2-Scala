@@ -82,9 +82,14 @@ values ('ACTIVE',
         'popular-supplements',
         'Most Popular',
         'See What Everyone Else Is Taking');
+insert into category ( type, url, name, description)
+values ('ACTIVE',
+        'product-brands',
+        'Brands',
+        'Find your favorite brand');
 insert into category ( type, url, name, description )
 values ('ACTIVE',
-        'sale-promotion',
+        'sale-products',
         'Sales and Promotions',
         'Check Out Our Current Promotions');
 
@@ -143,14 +148,23 @@ insert into skuprice ( type, skuid, price )
 values ('MSRP',3,69.99);
 
 insert into skucategory (type, skuid, categoryid)
-values ('ACTIVE',1,7);
+values ('ACTIVE',1,8);
 insert into skucategory (type, skuid, categoryid)
-values ('ACTIVE',2,7);
+values ('ACTIVE',2,8);
 insert into skucategory (type, skuid, categoryid)
 values ('ACTIVE',3,6);
+insert into skucategory (type, skuid, categoryid)
+values ('ACTIVE',1,4);
+insert into skucategory (type, skuid, categoryid)
+values ('ACTIVE',2,4);
+insert into skucategory (type, skuid, categoryid)
+values ('ACTIVE',3,4);
+insert into skucategory (type, skuid, categoryid)
+values ('ACTIVE',1,6);
+insert into skucategory (type, skuid, categoryid)
+values ('ACTIVE',2,6);
 
 commit;
-
 
 select * from sku;
 select * from brand;

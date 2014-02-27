@@ -256,7 +256,8 @@ CREATE TABLE SkuCategory (
   SkuId            int             REFERENCES Sku(Id),
   CategoryId       int             REFERENCES Category(Id),
   Comment          text,
-  TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP
+  TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(SkuID,CategoryId)
 );
 
 DROP TABLE IF EXISTS SkuAttribute CASCADE;

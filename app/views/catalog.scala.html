@@ -18,7 +18,7 @@
           case (product) => {
             <li>
               <a href="/product/@product.url">
-                <img src="@routes.Assets.at("img/products/"+product.id+".png")" alt="@product.name" />
+                <img src="@routes.Assets.at("img/products/"+product.url+".png")" alt="@product.name" />
                 <div class="name">@product.name</div>
               </a>
               <div class="priceContainer">

@@ -17,8 +17,8 @@
 
       <div class="float-left">
         <ul id="adGallery">
-          <li><img src="@routes.Assets.at("img/ads/1.jpg")" alt="Cycle Assist" /></li>
-          <li><img src="@routes.Assets.at("img/ads/2.jpg")" alt="PCT Assist" /></li>
+          <li><img src="@routes.Assets.at("img/ads/competitive-edge-labs-cycle-assist.jpg")" alt="Cycle Assist" /></li>
+          <li><img src="@routes.Assets.at("img/ads/competitive-edge-labs-pct-assist.jpg")" alt="PCT Assist" /></li>
         </ul>
       </div>
 
@@ -45,7 +45,7 @@
         case (product) => {
           <li>
             <a href="/product/@product.url">
-              <img src="@routes.Assets.at("img/products/"+product.id+".png")" alt="@product.name" />
+              <img src="@routes.Assets.at("img/products/"+product.url+".png")" alt="@product.name" />
               <div class="name">@product.name</div>
             </a>
             <div class="priceContainer">

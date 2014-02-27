@@ -20,7 +20,7 @@ GET         /fitness-goal/:url                 controllers.Storefront.category(u
 GET         /product-ingredients               controllers.Storefront.subCategories(url = "product-ingredients")
 GET         /product-ingredient/:url           controllers.Storefront.category(url: String)
 
-GET         /product-brands                    controllers.Storefront.cart
+GET         /product-brands                    controllers.Storefront.subCategories(url = "product-brands")
 GET         /product-brand/:url                controllers.Storefront.category(url: String)
 
 GET         /product/:url                      controllers.Storefront.product(url: String)

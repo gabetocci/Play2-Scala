@@ -1,13 +1,15 @@
 WEBAPP:
-search box
+List all products on site: seed sql
 sku -> category -> skucategory : Seed Data
-change shop by department -> shop our catalog;
+change shop by department -> start shopping here
+images: product view -> grab collection of image urls
 About us - better than Amazon! (bold tab text)
 Founding Story: Personal About Us Page: Go to Trade Shows (frontagte)
-top level URLs: brand-category-topsellers-sales-etc
 cart popover - 1sec on product add; hover display only;
+breadcrumbs: category > subcategory > product name
+search box: json list
 
-List all products on site: seed sql
+
 Admin: inventory mgmt
 -screw json: just post object
 datatable records
@@ -25,6 +27,8 @@ pinterest.com - landing page -> log in with facebook, etc
 
 eblast: "Value Bomb" - "Hot Delivery"
 bodybuilding.com features - amazon
+
+bitcoin: coinbase or bitstamp
 
 browser sniffer
 trace user activity: contents of cart, sessions, page requestes

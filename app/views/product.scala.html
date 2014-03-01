@@ -41,7 +41,7 @@
               <td class="greyLabel">You Save:</td>
               <td id="savings">
                 $@product.msrp.subtract(product.price)
-                (@product.price.divide(product.msrp, 0).movePointRight(2)%)
+                (@product.msrp.subtract(product.price).movePointRight(2).divide(product.msrp,0,2)%)
               </td>
             </tr>
           </table>

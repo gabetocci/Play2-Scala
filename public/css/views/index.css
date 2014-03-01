@@ -26,6 +26,10 @@ ul.productGrid li {
   *display: inline;
   *zoom: 1;
 }
+ul.productGrid img {
+  max-height: 175px;
+  max-width: 125px;
+}
 .priceContainer {
   overflow: hidden;
 }

@@ -1,4 +1,5 @@
 WEBAPP:
+config tesp/tesd connection
 List all products on site: seed sql
 sku -> category -> skucategory : Seed Data
 change shop by department -> start shopping here

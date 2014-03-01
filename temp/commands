@@ -20,8 +20,10 @@ netstat -ntulpa
 /etc/rc.local
 
 # postgres
+#su root -> postgres $psql
 service postgresql-9.3 restart
 /var/lib/pgsql/9.3/data/
+pg_dump tesd | psql -d tesp
 
 # git : http://git-scm.com/book/en/Git-on-the-Server-Setting-Up-the-Server
 ssh://toccig@stealstation.com:2022/home/toccig/tess.git

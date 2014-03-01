@@ -1,5 +1,6 @@
 WEBAPP:
-config tesp/tesd connection
+config tesp/tesd connection:
+  start -Dconfig.file=/opt/conf/prod.conf
 List all products on site: seed sql
 sku -> category -> skucategory : Seed Data
 change shop by department -> start shopping here

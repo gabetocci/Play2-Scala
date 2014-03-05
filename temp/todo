@@ -1,8 +1,5 @@
 WEBAPP:
 
-config tesp/tesd connection:
-  start -Dconfig.file=/opt/conf/prod.conf
-
 upload image files: http://www.playframework.com/documentation/2.0/api/scala/index.html#play.api.libs.Files$
 images: product view -> grab collection of image urls (images table with type)
 small quality thumbs

@@ -1,9 +1,13 @@
 ------------------------------------
 # deploy
+git commit
 G:\dev\tess>play clean compile stage
 ftp $\target\universal\stage
-$install.sh
-$bounce.sh
+ftp $\scripts
+$dos2unix.sh
+$scripts/bash/install.sh
+$scripts/bash/bounce.sh
+$scripts/bash/patchdb.sh
 ------------------------------------
 
 # software installed
@@ -43,3 +47,5 @@ intellij: VCS -> VCS Integration -> git
 /var/logs/*
 
 It appears that you upgraded a bad IP route package, we have rolled it back to iproute-2.6.32-23.el6.x86_64.rpm
+
+dos2unix$ sed -i 's/\r//' filename

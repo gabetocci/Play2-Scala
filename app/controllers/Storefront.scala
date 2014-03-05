@@ -14,7 +14,9 @@ object Storefront extends Controller {
 
 
   def index = Action {
-    Ok(html.index(Product.all, "Welcome to StealStation"))
+    Ok(html.index(
+      Product.category("popular-supplements").take(5),
+      Product.category("sale-products").take(5)))
   }
 
   def catalog = Action {

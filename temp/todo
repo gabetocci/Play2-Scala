@@ -47,6 +47,7 @@ meta tags: html publish timestamp in header
 
 
 SERVER SIDE:
+lockdown database user permissions
 (chron) yum update; backups
 
 delete unused users on toccipws: maybe add tess that can only run app

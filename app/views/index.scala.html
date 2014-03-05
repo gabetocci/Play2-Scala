@@ -1,4 +1,4 @@
-@(products: Seq[Product], message: String)
+@(topProducts: Seq[Product], saleProducts: Seq[Product])
 
 @main("StealStation :: Find a Steal of a Deal!") {
 
@@ -33,15 +33,15 @@
   </div><!-- / -->
   <hr />
 
-  <!-- responsive row -->
+  <!-- top sellers -->
   <div class="row-fluid">
 
-    <h5>Top Selling Products</h5>
+    <h4><a href="/product-category/popular-supplements">Best Sellers From The Store</a></h4>
 
-    <div class="gridWrapper span9">
+    <div class="gridWrapper span12">
 
       <ul class="productGrid">
-      @products.map {
+      @topProducts.map {
         case (product) => {
           <li>
             <a href="/product/@product.url">
@@ -60,9 +60,42 @@
     </div><!-- /gridWrapper -->
 
     <div class="span2">
-      <!-- -->
+      <!-- right -->
     </div>
 
-  </div><!-- /.row-fluid -->
+  </div><!-- /top sellers -->
+  <hr />
+
+  <!-- sale products -->
+  <div class="row-fluid">
+
+    <h4><a href="/product-category/sale-products">Current Sales, Specials, and Promotions</a></h4>
+
+    <div class="gridWrapper span12">
+
+      <ul class="productGrid">
+      @saleProducts.map {
+        case (product) => {
+          <li>
+            <a href="/product/@product.url">
+              <img src="@routes.Assets.at("img/products/"+product.url+".png")" alt="@product.name" />
+              <div class="name">@product.name</div>
+            </a>
+            <div class="priceContainer">
+              <div class="msrp">$@product.msrp</div>
+              <div class="price">$@product.price</div>
+            </div>
+          </li>
+        }
+      }
+      </ul>
+
+    </div><!-- /gridWrapper -->
+
+    <div class="span2">
+        <!-- right -->
+    </div>
+
+  </div><!-- /sale products -->
 
 }

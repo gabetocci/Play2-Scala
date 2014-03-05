@@ -32,6 +32,7 @@ POST        /product-search                    controllers.Storefront.productSea
 
 ### Administrative Actions
 GET         /admin                             controllers.Admin.index
+GET         /admin/inventory                   controllers.Admin.inventory
 
 # Accounting
 GET         /accounting/document/create        controllers.Accounting.createDocument

@@ -1,0 +1,44 @@
+@(brands: Seq[Brand])
+
+@main("StealStation :: Find a Steal of a Deal!") {
+
+  <!-- Page Specific CSS and Javascript -->
+  <script src="@routes.Assets.at("js/views/catalog.js")"></script>
+  <link type="text/css" rel="stylesheet" href="@routes.Assets.at("css/views/catalog.css")" />
+
+  <!-- responsive row -->
+  <div class="row-fluid">
+
+    <h5>Brands</h5>
+
+    <div class="gridWrapper span9">
+
+      <ul class="productList">
+        @brands.map {
+          case (brand) => {
+            <li>
+              <a href="/product-brand/@brand.url">
+                <img src="@routes.Assets.at("img/products/competitive-edge-labs-cycle-assist.png")" alt="@brand.name" />
+                <div class="name">@brand.name</div>
+              </a>
+              <div>
+                <div>@brand.name</div>
+              </div>
+            </li>
+          }
+        }
+      </ul>
+
+    </div><!-- /gridWrapper -->
+
+    <div id="jumboRight" class="float-left">
+      <img src="@routes.Assets.at("img/satisfaction.png")" alt="Satisfaction Guaranteed" />
+      <br />
+      <img src="@routes.Assets.at("img/paypal.png")" alt="Paypal Accepted" />
+      <br >
+      <img src="@routes.Assets.at("img/shipping.png")" alt="Fast Shipping" />
+    </div><!-- / -->
+
+  </div><!-- /.row-fluid -->
+
+}

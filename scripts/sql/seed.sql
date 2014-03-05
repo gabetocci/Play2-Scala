@@ -74,21 +74,21 @@ values ('ACTIVE',
         'Find Supplements With A Specific Ingredient');
 insert into category ( type, url, name, description )
 values ('ACTIVE',
-        'popular-supplements',
+        'popular-products',
         'Most Popular',
-        'See What Everyone Else Is Taking');
+        'See What Everyone Else Is Using');
 insert into category ( type, url, name, description)
 values ('ACTIVE',
         'product-brands',
         'Brands',
-        'Find your favorite brand');
+        'Find Your Favorite Brand');
 insert into category ( type, url, name, description )
 values ('ACTIVE',
         'sale-products',
         'Sales and Promotions',
         'Check Out Our Current Promotions');
 
--- categories
+-- subcategories
 insert into category ( type, url, name, description, parentcategory)
 values ('ACTIVE',
         'prohormones',
@@ -119,24 +119,84 @@ values ('ACTIVE',
         'Male Enhancement',
         'Get Your Swag On In The Bedroom',
         1);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'build-muscle',
+        'Build Muscle',
+        'Add Bulk',
+        2);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'burn-fat',
+        'Burn Fat',
+        'Burn Fat',
+        2);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'increase-energy',
+        'Increase Energy',
+        'Increase Energy',
+        2);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'sexual-health',
+        'Sexual Health',
+        'Get your swag on in the Bedroom',
+        2);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'mental-health',
+        'Improve Mental Focus',
+        'Improve Mental Focus',
+        2);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'protein',
+        'Protein',
+        'Protein Supplements',
+        3);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'creatine',
+        'Creatine',
+        'Creatine Supplements',
+        3);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'nitrous-oxide',
+        'Nitrous Oxide (NO2)',
+        'Nitrous Oxide (NO2) Supplements',
+        3);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'caffeine',
+        'Caffeine',
+        'Caffeine Supplements',
+        3);
+insert into category ( type, url, name, description, parentcategory)
+values ('ACTIVE',
+        'daspartic-acid',
+        'D-Aspartic Acid (DAA)',
+        'D-Aspartic Acid (DAA) Supplements',
+        3);
 
 
-insert into brand ( type, name )
-values ('ACTIVE', 'Competitive Edge Labs (CEL)');
-insert into brand ( type, name )
-values ('ACTIVE', 'Recomp Performance Nutrition (RPN)');
-insert into brand ( type, name )
-values ('ACTIVE', 'Cellucor');
-insert into brand ( type, name )
-values ('ACTIVE', 'Blackstone Labs');
-insert into brand ( type, name )
-values ('ACTIVE', 'Elite Formulations');
-insert into brand ( type, name )
-values ('ACTIVE', 'Serious Nutrition Solutions (SNS)');
-insert into brand ( type, name )
-values ('ACTIVE', 'Blackstone Labs');
-insert into brand ( type, name )
-values ('ACTIVE', 'Platinum Labs');
+insert into brand ( type, name, url )
+values ('ACTIVE', 'Competitive Edge Labs (CEL)','competitive-edge-labs');
+insert into brand ( type, name, url )
+values ('ACTIVE', 'Recomp Performance Nutrition (RPN)','recomp-performance-nutrition');
+insert into brand ( type, name, url )
+values ('ACTIVE', 'Cellucor','cellucor');
+insert into brand ( type, name, url )
+values ('ACTIVE', 'BPI Sports','bpi-sports');
+insert into brand ( type, name, url )
+values ('ACTIVE', 'Elite Formulations','elite-formulations');
+insert into brand ( type, name, url )
+values ('ACTIVE', 'Serious Nutrition Solutions (SNS)','serious-nutrition-solutions');
+insert into brand ( type, name, url )
+values ('ACTIVE', 'Blackstone Labs','blackstone-labs');
+insert into brand ( type, name, url )
+values ('ACTIVE', 'Platinum Labs','platinum-labs');
 
 insert into sku ( type, url, brandid, name, description )
 values ('ACTIVE','competitive-edge-labs-cycle-assist',1,'Cycle Assist','Cycle Assist is designed to be an all-in-one support solution for basic on cycle and post cycle therapy needs. Cycle Assist contains a combination of specifically dosed ingredients designed to help provide liver, blood pressure, cholesterol, prostate, and acne support.');

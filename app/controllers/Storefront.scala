@@ -15,7 +15,7 @@ object Storefront extends Controller {
 
   def index = Action {
     Ok(html.index(
-      Product.category("popular-supplements").take(5),
+      Product.category("popular-products").take(5),
       Product.category("sale-products").take(5)))
   }
 
@@ -23,45 +23,37 @@ object Storefront extends Controller {
     Ok(html.catalog(Product.all, "Product Catalog"))
   }
 
-  def product(url: String) = Action {
-    Product.one(url).map { product =>
-      Ok(html.product(product))
-    }.getOrElse(Home)
+  def category(url: String) = Action {
+    Ok(html.catalog(Product.category(url), Category.one(url).get.name))
   }
 
   def subCategories(url: String) = Action {
     val parent = Category.one(url).get
     Ok(html.subCategories(
-        Category.subCategories(parent.id), parent.name
-      ))
+      Category.subCategories(parent.id), parent.name
+    ))
   }
 
-  def category(url: String) = Action {
-    Ok(html.catalog(Product.category(url), url))
+  def brand(url: String) = Action {
+    Ok(html.catalog(Product.brand(url), Brand.one(url).get.name))
   }
 
-
+  def brands = Action {
+    Ok(html.brands(Brand.all))
+  }
 
   def productSearch = Action { implicit request =>
     val searchTerm = Form("searchTerms" -> text).bindFromRequest.get
-    Ok(html.catalog(Product.search(searchTerm), "Search Results: "+searchTerm))
+    val products = Product.search(searchTerm)
+    Ok(html.catalog(products, "You Searched For : "+searchTerm))
+      //.flashing("productCount" -> products.size.toString)
   }
 
-
-/*
-  def url(url: String) = Action {
+  def product(url: String) = Action {
     Product.one(url).map { product =>
       Ok(html.product(product))
-    }.getOrElse(
-        Ok(html.catalog(Product.category(url), url))
-      )
-  }
-
-  def product(id: Int) = Action {
-    Product.one(id).map { product =>
-      Ok(html.product(product))
     }.getOrElse(Home)
-  }*/
+  }
 
   def cart = Action {
     Ok(html.cart())

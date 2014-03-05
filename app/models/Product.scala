@@ -1,7 +1,7 @@
 package models
 
-import play.api.db._
 import play.api.Play.current
+import play.api.db._
 
 import anorm._
 import anorm.SqlParser._
@@ -18,7 +18,7 @@ case class Product( id:          Int,
 
 object Product {
 
-   // -- Parse a Product from a ResultSet
+   // -- Parsers
 
    val simple = {
     get[Int]("id") ~
@@ -83,11 +83,40 @@ object Product {
             left outer join skucategory
                  on skucategory.skuid = sku.id
             join category
-              on category.id = skucategory.categoryid
+                 on category.id = skucategory.categoryid
            where category.url = {url}
         """
       ).on(
           'url -> url
+        ).as(Product.simple *)
+    }
+  }
+
+  def search(searchTerm: String): Seq[Product] = {
+    DB.withConnection { implicit connection =>
+      SQL(
+        """
+          select sku.id                   as id,
+                 sku.url                  as url,
+                 sku.name                 as name,
+                 sku.description          as description,
+                 price.price              as price,
+                 msrp.price               as msrp,
+                 brand.name               as brand
+            from sku
+            left outer join skuprice as msrp
+                 on msrp.skuid = sku.id
+                 and msrp.type = 'MSRP'
+            left outer join skuprice as price
+                 on price.skuid = sku.id
+                 and price.type = 'ACTIVE'
+            left outer join brand
+                 on brand.id = sku.brandid
+           where ((upper(sku.name)   like '%'||upper({searchTerm})||'%') or
+                  (upper(brand.name) like '%'||upper({searchTerm})||'%'))
+        """
+      ).on(
+          'searchTerm -> searchTerm
         ).as(Product.simple *)
     }
   }
@@ -120,17 +149,17 @@ object Product {
     }
   }
 
-  def search(searchTerm: String): Seq[Product] = {
+  def brand(url: String): Seq[Product] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
-          select sku.id                   as id,
-                 sku.url                  as url,
-                 sku.name                 as name,
-                 sku.description          as description,
-                 price.price              as price,
-                 msrp.price               as msrp,
-                 brand.name               as brand
+          select sku.id                 as id,
+                 sku.url                as url,
+                 sku.name               as name,
+                 sku.description        as description,
+                 price.price            as price,
+                 msrp.price             as msrp,
+                 brand.name             as brand
             from sku
             left outer join skuprice as msrp
                  on msrp.skuid = sku.id
@@ -140,11 +169,10 @@ object Product {
                  and price.type = 'ACTIVE'
             left outer join brand
                  on brand.id = sku.brandid
-           where ((upper(sku.name)   like '%'||upper({searchTerm})||'%') or
-                  (upper(brand.name) like '%'||upper({searchTerm})||'%'))
+           where brand.url = {url}
         """
       ).on(
-          'searchTerm -> searchTerm
+          'url -> url
         ).as(Product.simple *)
     }
   }

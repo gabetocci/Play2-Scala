@@ -43,3 +43,6 @@
     Ok(searchTerms)
     //Ok(html.catalog(Product.search(searchTerms), "Search Results: "+searchTerms))
   }
+
+// flashing
+http://stackoverflow.com/questions/15531455/how-to-pass-flash-data-from-controller-to-view-with-play-framework

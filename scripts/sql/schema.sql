@@ -228,7 +228,8 @@ DROP TABLE IF EXISTS Brand CASCADE;
 CREATE TABLE Brand (
   Id               serial          PRIMARY KEY,
   Type             varchar(10)     NOT NULL REFERENCES RecordType(Type),
-  Name             varchar(50),
+  Name             varchar(50)     NOT NULL UNIQUE,
+  Url              varchar(100)
   EntityId         int             REFERENCES Entity(Id),
   Comment          text,
   TimeStamp        timestamp       DEFAULT CURRENT_TIMESTAMP

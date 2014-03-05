@@ -5,6 +5,7 @@
 .gridWrapper {
   margin-left: 10px;
 }
+/* grid */
 ul.productGrid {
   margin: 0px;
 }
@@ -20,6 +21,21 @@ ul.productGrid img {
   max-height: 175px;
   max-width: 125px;
 }
+/* list */
+ul.productList {
+  margin: 0px;
+}
+ul.productList li {
+  margin: 5px 10px 5px 0px;
+  vertical-align: top;
+  list-style: none;
+  *zoom: 1;
+}
+ul.productList img {
+  max-height: 175px;
+  max-width: 125px;
+}
+
 .priceContainer {
   overflow: hidden;
 }

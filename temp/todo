@@ -3,14 +3,14 @@ WEBAPP:
 config tesp/tesd connection:
   start -Dconfig.file=/opt/conf/prod.conf
 
+upload image files: http://www.playframework.com/documentation/2.0/api/scala/index.html#play.api.libs.Files$
+images: product view -> grab collection of image urls (images table with type)
+small quality thumbs
 
 user auth: http://stackoverflow.com/questions/11724368/scala-play-type-mismatch-found-anorm-rowparser-required-anorm-resultset
 cart popover - 1sec on product add; hover display only;
 breadcrumbs: category > subcategory > product name
 search box: json list
-
-upload image files
-images: product view -> grab collection of image urls (images table with type)
 
 About us - better than Amazon! (bold tab text)
 Founding Story: Personal About Us Page: Go to Trade Shows (frontgate)

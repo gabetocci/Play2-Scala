@@ -1,0 +1,44 @@
+@(form: Form[(String,String)])(implicit flash: Flash)
+
+@main("Restricted Area :: Administrative Panel") {
+
+    <!-- responsive row one -->
+    <div class="row-fluid">
+        <div class="span6">
+          <div class="hero-unit">
+
+            @helper.form(routes.Admin.authenticate) {
+
+              <h3>Sign in</h3>
+
+              @form.globalError.map { error =>
+                <p class="error">
+                  @error.message
+                </p>
+              }
+
+              @flash.get("success").map { message =>
+                <p class="success">
+                  @message
+                </p>
+              }
+
+              <p>
+                <input type="email" name="email" placeholder="Email" id="email" value="@form("email").value">
+              </p>
+              <p>
+                <input type="password" name="password" id="password" placeholder="Password">
+              </p>
+              <p>
+                <button type="submit" id="loginbutton">Login</button>
+              </p>
+
+            }
+
+            <a href="@routes.Storefront.index" id="storefront">View The Storefront</a>
+
+          </div><!-- /hero-unit -->
+        </div>
+    </div><!-- /.row-fluid -->
+
+}

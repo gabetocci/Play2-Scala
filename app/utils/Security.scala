@@ -8,6 +8,7 @@ import scala.concurrent.Future
 class AuthenticatedRequest[A](val user: User, request: Request[A]) extends WrappedRequest[A](request)
 
 //TODO test
+/*
 object Authenticated extends ActionBuilder[AuthenticatedRequest] {
   def invokeBlock[A](request: Request[A], block: (AuthenticatedRequest[A]) => Future[SimpleResult]) = {
     request.session.get("id").map { id => // Get id from the cookie, you have to set this on your post registration & post signin code.
@@ -22,7 +23,7 @@ object Authenticated extends ActionBuilder[AuthenticatedRequest] {
     }
   }
 }
-
+*/
 object Session {
 
   def save(sessionId: String, userId: String, req: RequestHeader): String = {

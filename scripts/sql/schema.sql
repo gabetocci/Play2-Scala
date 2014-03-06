@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS UserAccount CASCADE;
 CREATE TABLE UserAccount (
   Id               serial          PRIMARY KEY,
   EntityId         int             NOT NULL REFERENCES Entity(Id),
-  Username         varchar(20),
+  Username         varchar(100)    NOT NULL UNIQUE,
   Password         varchar(256),
   isActive         boolean         NOT NULL DEFAULT 't',
   Comment          text,

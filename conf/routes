@@ -29,10 +29,20 @@ POST        /product-search                    controllers.Storefront.productSea
 # not sure what I'm going to do with this -> possibly search url strings
 #GET         /:url                              controllers.Storefront.url(url: String)
 
+GET         /login                             controllers.Authentication.login
+POST        /login                             controllers.Authentication.authenticate
+GET         /logout                            controllers.Authentication.logout
 
 ### Administrative Actions
 GET         /admin                             controllers.Admin.index
+GET         /admin/login                       controllers.Admin.login
+POST        /admin/authenticate                controllers.Admin.authenticate
+GET         /admin/logout                      controllers.Admin.logout
+
 GET         /admin/inventory                   controllers.Admin.inventory
+
+
+
 
 # Accounting
 GET         /accounting/document/create        controllers.Accounting.createDocument

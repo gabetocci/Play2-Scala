@@ -8,7 +8,7 @@ import anorm.SqlParser._
 
 import scala.language.postfixOps
 
-case class User(email: String, username: String, password: String)
+case class User(fname: String, username: String, password: String)
 
 object User {
 
@@ -18,10 +18,10 @@ object User {
    * Parse a User from a ResultSet
    */
   val simple = {
-    get[String]("user.email") ~
-    get[String]("user.username") ~
-    get[String]("user.password") map {
-      case email~name~password => User(email, name, password)
+    get[String]("fname") ~
+    get[String]("username") ~
+    get[String]("password") map {
+      case fname~name~password => User(fname, name, password)
     }
   }
 
@@ -34,30 +34,26 @@ object User {
     DB.withConnection { implicit connection =>
       SQL(
         """
-          select email.emailaddress,
-                 useraccount.username,
-                 useraccount.password
+          select entity.firstname     as fname,
+                 useraccount.username as username,
+                 useraccount.password as password
             from entity
             join useraccount on useraccount.entityid = entity.id
-            join email on  email.entityid = entity.id
-                       and email.isprimary = 't'
            where useraccount.isactive = 't'
         """
       ).as(User.simple *)
     }
   }
 
-  def find(id: Int): Option[User] = {
+  def one(id: Int): Option[User] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
-          select email.emailaddress,
-                 useraccount.username,
-                 useraccount.password
+          select entity.firstname     as fname,
+                 useraccount.username as username,
+                 useraccount.password as password
             from entity
             join useraccount on useraccount.entityid = entity.id
-            join email on  email.entityid = entity.id
-                       and email.isprimary = 't'
            where useraccount.isactive = 't'
              and entity.id = {id}
         """
@@ -70,17 +66,19 @@ object User {
   /**
    * Retrieve a User from email.
    */
-  def findByEmail(email: String): Option[User] = {
+  def oneByEmail(email: String): Option[User] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
-          select email.emailaddress,
-                 useraccount.username,
-                 useraccount.password
+          select entity.firstname     as fname,
+                 email.emailaddress   as emailaddres,
+                 useraccount.username as username,
+                 useraccount.password as password
             from entity
             join useraccount on useraccount.entityid = entity.id
-            join email on  email.entityid = entity.id
-                       and email.isprimary = 't'
+            join email
+                 on email.entityid = entity.id
+                 and email.isprimary = 't'
            where useraccount.isactive = 't'
              and email.emailaddress = {email}
         """
@@ -97,10 +95,14 @@ object User {
     DB.withConnection { implicit connection =>
       SQL(
         """
-         select * from useraccount
-          where username = {username}
-            and password = {password}
-            and isactive = 't'
+          select entity.firstname     as fname,
+                 useraccount.username as username,
+                 useraccount.password as password
+            from entity
+            join useraccount on useraccount.entityid = entity.id
+           where useraccount.isactive = 't'
+             and useraccount.username = {username}
+             and useraccount.password = {password}
         """
       ).on(
           'username -> username,
@@ -127,12 +129,11 @@ object User {
           )
         """
       ).on(
-          'email    -> user.email,
           'username -> user.username,
           'password -> user.password
         ).executeUpdate()
 
-      user
+      return user
 
     }
   }

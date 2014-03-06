@@ -1,6 +1,6 @@
 WEBAPP:
 
-upload image files: http://www.playframework.com/documentation/2.0/api/scala/index.html#play.api.libs.Files$
+upload image files: http://www.playframework.com/documentation/2.2.1/ScalaFileUpload
 images: product view -> grab collection of image urls (images table with type)
 small quality thumbs
 

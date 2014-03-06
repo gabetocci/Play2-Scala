@@ -38,9 +38,9 @@ insert into RecordType (Type, Name, isactive)
 values ('Sale','Sale', 't');
 
 insert into UserAccount (EntityId, Username, Password)
-values (1, 'gabrieltocci', 'password');
+values (1, 'gabe@gabrieltocci.com', 'password');
 insert into UserAccount (EntityId, Username, Password)
-values (2, 'rachaeltocci', 'password');
+values (2, 'rachaeltocci@gmail.com', 'password');
 
 insert into Email ( Type, EntityID, EmailAddress, isPrimary)
 values ('PERSONAL',1,'gabetoccig@gmail.com','f');
